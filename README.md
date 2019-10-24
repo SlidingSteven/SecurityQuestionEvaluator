@@ -17,3 +17,16 @@
 ...* Start small and evaluate a question on input
 ...* Eventually get rid of the question on input and just use a URL or html upload, if possible.  I have a concern if we will be able to see the page contents at that point or if they will be locked and need a password to get to.  Maybe we will need to upload a file.
 
+## How To Run
+This flask app runs on Python 3.  When I downloaded Python 3 it makes me use "python3" in the shell to run it, some people may only need to use 'python'.  You can use pipenv to install dependencies and activate the shell-
+
+```
+python3 -m pipenv install 
+pyhton3 -m pipenv shell
+```
+
+Next navigate to the folder with the file app.py and run
+```
+python3 app.py
+```
+Then go to http://127.0.0.1:5000/ to see the index page
