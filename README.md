@@ -9,8 +9,8 @@
 ## TODO
 * Research common security questions and determine what is weak/strong
 
-	Compile a list of websites that use security questions.  Looking for banks, emails, social media accounts for a starting point.
-	Google has done research on this that may be useful for getting started.
+	* Compile a list of websites that use security questions.  Looking for banks, emails, social media accounts for a starting point.
+	* Google has done research on this that may be useful for getting started.
 
 * Build a flask app to evaluate all questions on a website given a URL
 
