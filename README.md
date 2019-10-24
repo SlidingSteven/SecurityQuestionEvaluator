@@ -8,9 +8,12 @@
 
 ## TODO
 * Research common security questions and determine what is weak/strong
-...Compile a list of websites that use security questions.  Looking for banks, emails, social media accounts for a starting point.
-...Google has done research on this that may be useful for getting started.
+
+	Compile a list of websites that use security questions.  Looking for banks, emails, social media accounts for a starting point.
+	Google has done research on this that may be useful for getting started.
+
 * Build a flask app to evaluate all questions on a website given a URL
+
 ...User should input a url and we will automatically scrape the HTML on the page using Python to find security questions and extract them.  
 ...* We will need to first make a simple flask app
 ...* Next need some front end constructed
