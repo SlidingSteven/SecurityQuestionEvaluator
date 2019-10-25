@@ -48,4 +48,4 @@ to the top of the app.py file.  To use the functions built in the new file on th
 filenameWithNoExtension.functionName(WhateverParameters, you, need)
 ```
 
-If you would rather write JS functions straight on the HTML pages that works all the same.
+If you would rather write JS functions straight on the HTML pages that works too, but you will have to figure out how to make it work.
