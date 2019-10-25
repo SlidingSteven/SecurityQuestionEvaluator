@@ -1,10 +1,12 @@
-from flask import Flask
+from flask import Flask, request, render_template
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return "Hi"
-
+    if request.method == 'POST':
+        return "great question"
+    else:
+        return render_template('index.html')
 
 if __name__ == '__main__':
     app.debug = True
