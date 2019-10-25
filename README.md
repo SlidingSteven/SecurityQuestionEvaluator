@@ -33,3 +33,19 @@ Next navigate to the folder with the file app.py and run
 python3 app.py
 ```
 Then go to http://127.0.0.1:5000/ to see the index page
+
+
+## How to add things
+### HTML Templates
+You can add HTML templates to the "templates" folder.  They have to go there or else flask will not find them.
+### Python Functions
+These can be added to the file in one of two ways.  You can do it in the app.py file if you know what you are doing or you can add 
+```
+import filenameWithNoExtension
+```
+to the top of the app.py file.  To use the functions built in the new file on the app.py scripts you can type
+```
+filenameWithNoExtension.functionName(WhateverParameters, you, need)
+```
+
+If you would rather write JS functions straight on the HTML pages that works all the same.
