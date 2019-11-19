@@ -2,16 +2,18 @@
 <html>
 <body>
 
-<h2>Question Input</h2>
-
+<h2>URL Input</h2>
+{% if ruling %}
+<p style= "color:red">LAST SUBMISSION RETURNED WAS FOUND TO BE {{ ruling }}</p>
+{% endif %}
 <form method = "POST">
-  Security Question:<br>
-  <input type="text" name="security_question">
+  Enter a URL:<br>
+  <input type="text" name="url">
   <br>
   <input type="submit" value="Submit">
 </form> 
 
-<p>Click the "Submit" button, and we will evaluate your question.</p>
+<p>Click the "Submit" button, and we will evaluate your webpage.</p>
 
 </body>
 </html>
