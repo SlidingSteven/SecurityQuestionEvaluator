@@ -8,12 +8,17 @@ def index():
         url = request.form['url']
         ruling = newbs4.checkURL(url)
         if ruling:
-            return render_template('index.html', ruling = "SAFE")
+            return render_template('SSQ Checker/index.html', ruling = "SAFE")
+            #return render_template('index.html', ruling = "SAFE")
         else:
-            return render_template('index.html', ruling = "NOT SAFE")
+            return render_template('SSQ Checker/index.html', ruling = "NOT SAFE")
+
+            #return render_template('index.html', ruling = "NOT SAFE")
         
     else:
-        return render_template('index.html')
+        return render_template('SSQ Checker/index.html')#, ruling = "SAFE")
+
+        #return render_template('index.html')
 
 if __name__ == '__main__':
     app.debug = True
