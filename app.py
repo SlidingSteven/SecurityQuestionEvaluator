@@ -56,9 +56,7 @@ def secureAnswers():
         component0 = request.form['component0']
         component1 = request.form['component1']
         component2 = request.form['component2']
-        component3 = request.form['component3']
-        component4 = request.form['component4']
-        component5 = request.form['component5']
+
 
         listOfRecommendations = []
         numComponents = 0
@@ -68,12 +66,7 @@ def secureAnswers():
                 numComponents += 1
                 if component2:
                     numComponents += 1
-                    if component3:
-                        numComponents += 1
-                        if component4:
-                            numComponents += 1
-                            if component5:
-                                numComponents += 1
+
         print(numComponents)
         return render_template('SSQ Checker/SecureOutput.html', listOfRecommendations = numComponents)
 
