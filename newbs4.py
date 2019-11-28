@@ -18,6 +18,7 @@ def text_from_html(body):
     return u" ".join(t.strip() for t in visible_texts)
 
 def SafeQuestions(listOfFlags,Questions):
+    
     for word in listOfFlags:
         if word in Questions:#Not safe!
             return False
@@ -50,3 +51,5 @@ def checkURL(url):
         print("Not Safe!")
         return False
     print(strg1)
+
+    
