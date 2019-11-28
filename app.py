@@ -9,16 +9,16 @@ def index():
         url = request.form['url']
         ruling = newbs4.checkURL(url)
         if ruling:
-            return render_template('SSQ Checker/index.html', ruling = "SAFE")
+            return render_template('SSQ Checker/index.html', ruling = ruling)
             #return render_template('index.html', ruling = "SAFE")
         else:
-            return render_template('SSQ Checker/index.html', ruling = "NOT SAFE")
+            return render_template('SSQ Checker/index.html', ruling = "NO UNSAFE QUESTIONS FOUND")
 
             #return render_template('index.html', ruling = "NOT SAFE")
         
     else:
-        return render_template('SSQ Checker/index.html')#, ruling = "SAFE")
-
+        #return render_template('SSQ Checker/index.html')#, ruling = "SAFE")
+        return render_template('SSQ Checker/indexSearch.html')
         #return render_template('index.html')
 
 @app.route('/Mothers-Maiden-Name-Demo', methods=['GET', 'POST'])

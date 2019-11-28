@@ -6596,7 +6596,11 @@ html, body {
     </div>
   </form><br><br>
   {% if ruling %}
-  <p style= "color:red">LAST SUBMISSION RETURNED WAS FOUND TO BE {{ ruling }}</p>
+  <p style= "color:red">SOME UNSAFE QUESTIONS MAY HAVE BEEN FOUND</p>
+  {% for item in ruling %}
+
+  <p style= "color:red">{{ item }}</p>
+  {% endfor %}
   {% endif %}
     <div class="container mt-auto">
       <div class="row">
