@@ -207,16 +207,19 @@ def publicInformation(first, last, zipcode):
         #print(type(name), type(ages[i]), type(links[i]), type(familyMembers), type(aliases), type(newListOfAddresses), type(mothersMaidenNames))
 
         peopleFound.append(tempPerson)
+        #print(  peopleFound[i].get_name(), "\n",
+        #    peopleFound[i].get_age(), "\n",
+        #    peopleFound[i].get_addresses(), "\n", 
+        #    peopleFound[i].get_aliases(), "\n",
+        #    peopleFound[i].get_family(),"\n",
+        #    peopleFound[i].get_link(),"\n",
+        #    peopleFound[i].get_Mothers_Maiden_Name())
         i += 1
 
-    #print(  peopleFound[0].get_name(), "\n",
-    #        peopleFound[0].get_age(), "\n",
-    #        peopleFound[0].get_addresses(), "\n", 
-    #        peopleFound[0].get_aliases(), "\n",
-    #        peopleFound[0].get_family(),"\n",
-    #        peopleFound[0].get_link(),"\n",
-    #        peopleFound[0].get_Mothers_Maiden_Name())
+
     return peopleFound
+
+
 
 #publicInformation("Steven", "Tucker", "74012")
 

@@ -120,7 +120,7 @@ def checkURL(url):
     for line in listOfQs:
         for key in dictOfWordsVals:
             if key in line:
-                stringTemp  = key + " : " + dictOfWordsReasons[key]+ "\n" + line + "\n"
+                stringTemp  = key + " : " + dictOfWordsReasons[key]+ "<br/>" + line + "<br/>"
                 stringOfOutput.append(stringTemp)
                 #print(key, " : ", dictOfWordsReasons[key], "\n", line, "\n")
                 #listOfQs.append(line)
