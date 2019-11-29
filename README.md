@@ -1,10 +1,10 @@
 # SecurityQuestionEvaluator
 
 ## CHECKPOINTS 
-1. Research Paper
-2. Lightning Talk
-3. Meet with professor
-4. Final Product
+1. [x] Research Paper 
+2. [x] Lightning Talk
+3. [x] Meet with professor
+4. [ ] Final Product
 
 ## TODO
 * Research common security questions and determine what is weak/strong
@@ -25,7 +25,7 @@ This flask app runs on Python 3.  When I downloaded Python 3 it makes me use "py
 
 ```
 python3 -m pipenv install 
-pyhton3 -m pipenv shell
+python3 -m pipenv shell
 ```
 
 Next navigate to the folder with the file app.py and run
