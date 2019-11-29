@@ -4,12 +4,7 @@
 1. [x] Research Paper 
 2. [x] Lightning Talk
 3. [x] Meet with professor
-4. [ ] Final Product
-
-## COMPLETED
-* Build a flask app to evaluate all questions on a website given a URL
-
-	User should input a url and we will automatically scrape the HTML on the page using Python to find security questions and extract them.  
+4. [ ] Final Product 
 
 ## TODO
 * Research common security questions and determine what is weak/strong.  Provide users with a list for them to use on websites they may be building.
