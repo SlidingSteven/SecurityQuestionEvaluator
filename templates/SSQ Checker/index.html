@@ -6547,17 +6547,27 @@ html, body {
         <div class="mx-auto col-md-9">
           <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-              <a class="navbar-brand" href="#"><b>SQS Checker</b></a>
+              <a class="navbar-brand" href="/"><b>SQS Checker</b></a>
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span> </button>
               <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#"><b>Home</b></a>
+                    <a class="nav-link active active" href="/"><b>Home</b></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#"><b>The Team</b></a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/Mothers-Maiden-Name-Demo"><b>Demo Mother's Maiden Name</b></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/Secure-Answers"><b>Create a Secure Answer</b></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/Full-Public-Info-Search"><b>Public Info Demo</b></a>
+                  </li>
+
                 </ul>
               </div>
             </div>
@@ -6575,16 +6585,28 @@ html, body {
               <div class="col-md-8" style="">
                 <div class="row">
                   <div class="mx-auto pb-2 col-md-9">
-                    <h1 contenteditable="false">Our Project’s Motivation</h1>
+                    <h1 contenteditable="false">Research Output</h1>
                   </div>
                 </div>
 
-                <p class="lead">Security questions are an extra measure taken to ensure that a persons account is more secure. Unfortunately, these security questions are easily breakable, given that a persons information and personal data can easily be found online.&nbsp;<br><br>Our goal with this project is to parse a website for security questions andcheck to see if that particular secuity questions is strong of weak, according to our data based on various security question categories. </p>
-              </div>
-              <div class="col-md-4 pb-5" style=""><img class="d-block align-items-center w-100 d-flex flex-grow-0 justify-content-start img-fluid mx-auto pt-1 pb-4" src="static/SSQCheckerLogo.png"></div>
-            </div><input type="text" name="url" class="form-control shadow-sm form-control-lg" placeholder="Enter the url: http://.." required="required" >
+                {% if ruling %}
+                <p style= "color:red">SOME UNSAFE QUESTIONS MAY HAVE BEEN FOUND</p>
+                {% for item in ruling %}
+                {% autoescape false %}
 
-          </div>
+                <p style= "color:red">{{ item }}</p>
+                {% endautoescape %}
+
+                {% endfor %}
+                {% endif %}
+                </div>
+              <div class="col-md-4 pb-5" style=""><img class="d-block align-items-center w-100 d-flex flex-grow-0 justify-content-start img-fluid mx-auto pt-1 pb-4" src="static/SSQCheckerLogo.png"></div>
+            </div>
+            <div class="input-group input-group-lg mb-3 ">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" style="color:black" >Enter URL</span>
+                </div>
+                <input type="text" name="url" class="form-control shadow-sm form-control-lg" placeholder="Enter the url: http://.." required="required" >          </div>          </div>
         </div>
       </div>
       <div class="row">
@@ -6595,13 +6617,7 @@ html, body {
       </div>
     </div>
   </form><br><br>
-  {% if ruling %}
-  <p style= "color:red">SOME UNSAFE QUESTIONS MAY HAVE BEEN FOUND</p>
-  {% for item in ruling %}
 
-  <p style= "color:red">{{ item }}</p>
-  {% endfor %}
-  {% endif %}
     <div class="container mt-auto">
       <div class="row">
         <div class="col-md-12">
