@@ -14,11 +14,11 @@ def tag_visible(element):
 def text_from_html(body):
     soup = BeautifulSoup(body, 'html.parser')
     texts = soup.findAll(text=True)
-    visible_texts = filter(tag_visible, texts)  
+    visible_texts = filter(tag_visible, texts)
     return u" ".join(t.strip() for t in visible_texts)
 
 def SafeQuestions(listOfFlags,Questions):
-    
+
     for word in listOfFlags:
         if word in Questions:#Not safe!
             #print(Questions)
@@ -55,7 +55,7 @@ def checkURL(url):
         for sentence in strg:
             strg1 = strg1 + sentence + "\n"
         print(strg1, file=f)
-    
+
     listOfFlags1 = ["maiden", "address", "name"]
     dictOfWordsVals = {
         "maiden" : 2,
@@ -86,12 +86,13 @@ def checkURL(url):
         "favorite sport": 1
     }
     dictOfWordsReasons = {
-        "maiden" : "A maiden name can be guessed quite easily using public records.",
+        "maiden" : " A maiden name can be guessed quite easily using public records.",
         "mother's maiden name" : "A maiden name can be guessed quite easily using public records.",
-        "address" : "Past addresses are quite easily found using public records.",
-        "name" : "Public records keep a list of names suspected to be relatives.  Additionally if you keep a friends list on social media this can be used against you by an attacker.",
-        "school" : "This is less likely to be found with a public records site but could easily be found through a person's social media.",
-        "high school" : "This is less likely to be found with a public records site but could easily be found through a person's social media.",
+        "address" :"Past addresses are quite easily found using public records.",
+        "name" :"Public records keep a list of names suspected to be relatives.  Additionally if you keep a friends list on social media this can be used against you by an attacker.",
+        "school" :"This is less likely to be found with a public records site but could easily be found through a person's social media.",
+        "high school" :
+        "This is less likely to be found with a public records site but could easily be found through a person's social media.",
         "highschool" : "This is less likely to be found with a public records site but could easily be found through a person's social media.",
         "college" : "This is less likely to be found with a public records site but could easily be found through a person's social media.",
         "college major" : "This is less likely to be found with a public records site but could easily be found through a person's social media.",
@@ -120,13 +121,14 @@ def checkURL(url):
     for line in listOfQs:
         for key in dictOfWordsVals:
             if key in line:
-                stringTemp  = key + " : " + dictOfWordsReasons[key]+ "\n" + line + "\n"
+                stringTemp  = key + ":" + "\n" + dictOfWordsReasons[key]+ "\n" + line + "\n"
                 stringOfOutput.append(stringTemp)
                 #print(key, " : ", dictOfWordsReasons[key], "\n", line, "\n")
                 #listOfQs.append(line)
-    
+
     for line in stringOfOutput:
         print(line)
+
     return(stringOfOutput)
     #print(listOfQs)    print("are the questions safe?")
     ruling = SafeQuestions(listOfFlags1,strg1)
@@ -143,4 +145,3 @@ def checkURL(url):
 
 
 #checkURL('https://www.loginradius.com/blog/2019/01/best-practices-choosing-good-security-questions/')
-    
