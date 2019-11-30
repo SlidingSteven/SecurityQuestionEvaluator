@@ -1,5 +1,38 @@
-          SQS Checker        Home    The Team    Demo Mother's Maiden Name    Create a Secure Answer    Public Info Demo                   Our Project’s Motivation    Security questions are an extra measure taken to ensure that a persons account is more secure.
-Unfortunately, these security questions are easily breakable, given that a persons information and personal data can easily be found online.
-Our goal with this projejct is to parse a website for security questions andcheck to see if that particular secuity questions is strong of weak, according to our data based on various security question categories.
-Enter URL         Run Checker        Project created for Computer Security - Course 4173 - Fall 2019   
+                                     Search for:      Skip to content  Home  Examples  Types  Designing  Passwords  About        Good Security Questions          Types    A specific security question will not work for all people so offer questions in a variety of categories.
+There are several types or categories of security questions as shown below.
+IMPORTANT : Most of the questions below are poor or fair questions and not recommended for use.
+They are shown below only as an example of type, not necessarily an example of quality.
+For a list of “good” questions, see the Full List on the Examples page.
+Childhood   What was your childhood nickname?
+What is the name of your favorite childhood friend?
+Family   In what city or town did your mother and father meet?
+What is the middle name of your oldest child?
+Favorites   What is your favorite team?
+What is your favorite movie?
+Favorites Historical   What was your favorite sport in high school?
+What was your favorite food as a child?
+Firsts   What is the first name of the boy or girl that you first kissed?
+What was the make and model of your first car?
+Personal Characteristics   What was the name of the hospital where you were born?
+Who is your childhood sports hero?
+Education   What school did you attend for sixth grade?
+What was the last name of your third grade teacher?
+Work   In what town was your first job?
+What was the name of the company where you had your first job?
+Few if Any Good Security Questions  The term “security questions” is a misnomer.
+Security questions are not secure, but instead create a potential hole or breach in security by providing ways for users to gain unauthorized access.
+People share considerable personal information on social networking sites, mobile tools, and blogs making it increasingly easier to find information on people.
+Hopefully, security experts will create better ways of authentication and forgotten passwords.
+Until then security questions will likely prevail.
+Also, there are few if any “good” security questions; most are fair or bad.
+A good question would rate high on all five criteria with a total of 13 or 14 (5 criteria on a scale of 1-3).
+There’s not one question in my list that rated a total of 15.
+The reality is, few questions qualify as “good” and  even the best security questions are not good enough to screen out all attacks.
+There is a trade-off; self-service vs.
+security.
+A Little Security/Login Humor    Some comics below about logins and security questions.
+Bizarro Comics  http://bizarrocomics.com/2012/09/27/pet-parking-eunuch-humping-loaf/  The Match  http://www.thecomicstrips.com/store/add.php?iid=96650        Full List of Questions   200 security questions  40+ ‘good’ questions  survey results - what people use  ratings, rankings, rationale   Get the Full List  Choose PayPal or Crypto - $19.50 USD  PayPal  After PayPall payment, if you don't immediately have a link to the Google sheet, please contact me .
+Cryptocurrency  Pay with Bitcoin, Bitcoin Cash, Ethereum, or Litecoin .
+Then contact me so I can send you the Full List.
+Ads          © 2007—2019 Kwista LLC   | Disclaimer & Terms of Use     Sample - Full List Security Questions  ×         
 

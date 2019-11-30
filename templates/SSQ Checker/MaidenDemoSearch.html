@@ -4096,7 +4096,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4116,7 +4116,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4133,7 +4133,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4162,7 +4162,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -6556,7 +6556,7 @@ html, body {
                     <a class="nav-link " href="/"><b>Home</b></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"><b>The Team</b></a>
+                    <a class="nav-link" href="/team"><b>The Team</b></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" href="/Mothers-Maiden-Name-Demo"><b>Demo Mother's Maiden Name</b></a>
@@ -6588,37 +6588,37 @@ html, body {
                   </div>
                 </div>
                 {% if listOfPeople %}
-                <p class="lead">Given your input we found a list of names we think could be your mother's maiden name.  
-                  As short as this list is, a malicious user could shorten this list even further.  If an attacker has a sufficiently short list they 
+                <p class="lead">Given your input we found a list of names we think could be your mother's maiden name.
+                  As short as this list is, a malicious user could shorten this list even further.  If an attacker has a sufficiently short list they
                   can crack into an account using a brute force attack by entering each of the names found below.
                 </p>
                   {% if listOfPeople %}
                     <br\>
-                    <p style="color:red" class="lead">{{ listOfPeople }}</p> 
+                    <p style="color:red" class="lead">{{ listOfPeople }}</p>
                   {% endif %}
                   <br>
                   <br>
                   <p class="lead">
-                  If you have no other choice than to answer this question there are still secure ways to answer it.  By answering with a phrase or a 
-                  certain format you can significantly raise the pool of candidates the attacker would have to choose from and they would no longer be 
+                  If you have no other choice than to answer this question there are still secure ways to answer it.  By answering with a phrase or a
+                  certain format you can significantly raise the pool of candidates the attacker would have to choose from and they would no longer be
                   entered into public record.
                   <div class="col-md-12"><a href="/Secure-Answers" class="button"><button type="submit" class="btn btn-lg btn-success shadow-sm">Build a secure answer</button></a></div>
-                
+
                 </p>
-                
+
                 {% else %}
                 <p class="lead">
-                  There are many insecure questions but one of the most often used ones is "What is your mother's maiden name?" 
-                  This question is incredibly insecure and you can see how by searching yourself below.  We compile public information on a 
+                  There are many insecure questions but one of the most often used ones is "What is your mother's maiden name?"
+                  This question is incredibly insecure and you can see how by searching yourself below.  We compile public information on a
                   person and use it to automate a list of potential mother's maiden names.  This is based on the publicly known family members
-                  associated with you and their last names.  A determined attacker could easily narrow the list further by checking your social media or 
-                  doing more research on their victim. 
+                  associated with you and their last names.  A determined attacker could easily narrow the list further by checking your social media or
+                  doing more research on their victim.
                    </p>
                 {% endif %}
               </div>
 
               <div class="col-md-3 pb-5" style=""><img class="d-block align-items-center w-100 d-flex flex-grow-0 justify-content-start img-fluid mx-auto pt-1 pb-4" src="static/SSQCheckerLogo.png"></div>
-            </div>  
+            </div>
             <form method = "POST">
 
             <div class="input-group input-group-lg mb-3 col-md-4">
