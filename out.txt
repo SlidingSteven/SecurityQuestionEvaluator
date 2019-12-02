@@ -1,38 +1,94 @@
-                                     Search for:      Skip to content  Home  Examples  Types  Designing  Passwords  About        Good Security Questions          Types    A specific security question will not work for all people so offer questions in a variety of categories.
-There are several types or categories of security questions as shown below.
-IMPORTANT : Most of the questions below are poor or fair questions and not recommended for use.
-They are shown below only as an example of type, not necessarily an example of quality.
-For a list of “good” questions, see the Full List on the Examples page.
-Childhood   What was your childhood nickname?
-What is the name of your favorite childhood friend?
-Family   In what city or town did your mother and father meet?
-What is the middle name of your oldest child?
-Favorites   What is your favorite team?
-What is your favorite movie?
-Favorites Historical   What was your favorite sport in high school?
-What was your favorite food as a child?
-Firsts   What is the first name of the boy or girl that you first kissed?
-What was the make and model of your first car?
-Personal Characteristics   What was the name of the hospital where you were born?
-Who is your childhood sports hero?
-Education   What school did you attend for sixth grade?
-What was the last name of your third grade teacher?
-Work   In what town was your first job?
-What was the name of the company where you had your first job?
-Few if Any Good Security Questions  The term “security questions” is a misnomer.
-Security questions are not secure, but instead create a potential hole or breach in security by providing ways for users to gain unauthorized access.
-People share considerable personal information on social networking sites, mobile tools, and blogs making it increasingly easier to find information on people.
-Hopefully, security experts will create better ways of authentication and forgotten passwords.
-Until then security questions will likely prevail.
-Also, there are few if any “good” security questions; most are fair or bad.
-A good question would rate high on all five criteria with a total of 13 or 14 (5 criteria on a scale of 1-3).
-There’s not one question in my list that rated a total of 15.
-The reality is, few questions qualify as “good” and  even the best security questions are not good enough to screen out all attacks.
-There is a trade-off; self-service vs.
-security.
-A Little Security/Login Humor    Some comics below about logins and security questions.
-Bizarro Comics  http://bizarrocomics.com/2012/09/27/pet-parking-eunuch-humping-loaf/  The Match  http://www.thecomicstrips.com/store/add.php?iid=96650        Full List of Questions   200 security questions  40+ ‘good’ questions  survey results - what people use  ratings, rankings, rationale   Get the Full List  Choose PayPal or Crypto - $19.50 USD  PayPal  After PayPall payment, if you don't immediately have a link to the Google sheet, please contact me .
-Cryptocurrency  Pay with Bitcoin, Bitcoin Cash, Ethereum, or Litecoin .
-Then contact me so I can send you the Full List.
-Ads          © 2007—2019 Kwista LLC   | Disclaimer & Terms of Use     Sample - Full List Security Questions  ×         
+             Stack Overflow      Products    Customers    Use cases         Stack Overflow  Public questions and answers      Teams  Private questions and answers for your team      Enterprise  Private self-hosted questions and answers for your enterprise      Talent  Hire technical talent      Advertising  Reach developers worldwide             Loading…             Log in  Sign up      current community          Stack Overflow     help  chat          Meta Stack Overflow       your communities     Sign up or log in to customize your list.
+more stack exchange communities   company blog              By using our site, you acknowledge that you have read and understand our Cookie Policy , Privacy Policy , and our Terms of Service .
+Home     Public     Stack Overflow     Tags    Users    Jobs        Teams   What’s this?
+Teams  Q&A for Work  Stack Overflow for Teams is a private, secure spot for you and
+                                                            your coworkers to find and share information.
+Learn more                  First 25 Users Free                Python, Read from txt file and split data   Ask Question      Asked  4 years ago    Active  4 years ago    Viewed 4k times           -3           This is a programming exercise that I am working on.
+So I have this text file (.txt) with lines that look something like this:  'X', ['X', 'a', ...
+, 'b'], 'There should be 5 of X in this vector'  And what I want is to define a function that reads this data into python line by line and send each line back as three variables, for this specific line above I want the function to send back this:  var = 'X'
+vek = ['X', 'a', ...
+, 'b']
+strng = 'There should be 5 of X in this vector'  this is how far i've got  def reading(file, linenumber):
+
+    text = open(file, 'r')
+    data = text.readlines()
+
+
+    return something
+    text.close()  When I have red this into python I want to use this returned data in a code that "counts how many times the variable (var) are repeated in the vector/list (vek) and then print out that number to see if it agree with the statement (strng).
+I think I can handle this last part, I just need some help with the reading and splitting.
+Also I want to say that I am really new into python, I saw my first code for like 2 weeks ago.
+I have however done abit MATLAB so I am familiar with for, while, if-elif-else and I understand some basic programming.
+I am using 2.7 version.
+Please have some patience with me :)     python  python-2.7       share | improve this question      edited Nov 11 '15 at 15:36      Claessie         asked Nov 11 '15 at 14:46       Claessie Claessie   123 1 1 silver badge 5 5 bronze badges                 1      What's your specific problem?
+YOu need to know how to convert each "line" in to the three variables?
+Also, can you describe what sort of data structure you want to return from this function?
+– David Zemens  Nov 11 '15 at 14:51               I'll try to edit the question some to make it more clear.
+This is all very new to me, I don't really know how to use the proper terminology and my code isn't that professional, for that I apologies.
+– Claessie  Nov 11 '15 at 15:23            I think I have an idea about what you're trying to do, check out my answer below as I have made a revision to return the specified linenumber, as valid python objects instead of string literals.
+– David Zemens  Nov 11 '15 at 15:24            Ok, I edited my question a bit now, maybe it helps.
+Will take a look at your comment and try some on my own now :) – Claessie  Nov 11 '15 at 15:37            Thanks, it's clear now what you want to do.
+I think I made the right assumptions in my answer.
+– David Zemens  Nov 11 '15 at 15:38        add a comment  |            1 Answer 1     active  oldest  votes            3          This line will read the entire file into a list of "lines" (string objects)  data = text.readlines()  Now, you need to use the split(',') method on each string to split each line on the comma delimiter  for line in data:
+    l = line.strip().split(',')
+    var, vek, strng =  l[0], l[1:-1], l[-1]  This will return literal strings, which is probably not hat you want, eg  >>> var
+"'@'"
+>>> vek
+[" ['list element1'", " 'list element2'", "'more list elements1']"]
+>>> strg
+" 'A string1'"  Assuming you want to return the specified linenumber from the file, as valid python objects (e.g., vek should be a list, not a string that looks like a list), then this should work:  def reading(path, linenumber):
+    with open(path, 'r') as text:
+        data = text.readlines()
+    if linenumber <= len(data):
+        l = data[linenumber-1].strip().split(',')
+        # Here i use the map function:
+        var, vek, strg = map(eval, [l[0], ','.join(l[1:-1]).strip(), l[-1]])
+
+        # You could do each on its own line, like below:
+        #var = eval(l[0])
+        #vek = eval(','.join(l[1:-1]).strip()) ## converts this to python list obj.
+        #strg = eval(l[-1])
+        return var, vek, strg
+    else:
+        return (None, None, None)      share | improve this answer      edited Nov 11 '15 at 15:57             answered Nov 11 '15 at 14:51       David Zemens David Zemens   48.8k 10 10 gold badges 60 60 silver badges 107 107 bronze badges                    Don't use that part, use the function reading as I've provided it at the bottom of the answer.
+– David Zemens  Nov 11 '15 at 15:55            oh ok!
+I deleted my first comment.
+It was a mess since the code didn't come out right, how do I comment code here ?
+– Claessie  Nov 11 '15 at 15:57            I made a revision to that part of the answer anyways :)  You comment code using the ` character (it is under the ~ usually).
+But please avoid trying to put lots of code in a comment, if you have additional questions, prefer to revise your Q to include the additional details, as code doesn't format well (no line breaks, indents, etc.) in the comments.
+– David Zemens  Nov 11 '15 at 15:58           add a comment  |             Your Answer                  Thanks for contributing an answer to Stack Overflow!
+Please be sure to answer the question .
+Provide details and share your research!
+But avoid … Asking for help, clarification, or responding to other answers.
+Making statements based on opinion; back them up with references or personal experience.
+To learn more, see our tips on writing great answers .
+draft saved  draft discarded             Sign up or log in    Sign up using Google   Sign up using Facebook   Sign up using Email and Password       Post as a guest    Name           Email  Required, but never shown              Post as a guest    Name           Email  Required, but never shown            Post Your Answer  Discard  By clicking “Post Your Answer”, you agree to our terms of service , privacy policy and cookie policy      Not the answer you're looking for?
+Browse other questions tagged python  python-2.7 or ask your own question .
+Blog          Preventing the Top Security Weaknesses Found in Stack Overflow Code Snippets     Featured on Meta          Feedback post: Moderator review and reinstatement processes             Upvotes on questions will now be worth the same as upvotes on answers        Related   2179 How do I copy a file in Python?
+1168 Extracting extension from filename in Python 1389 How do you read from stdin?
+2028 How to read a file line-by-line into a list?
+1043 Find all files in a directory with extension .txt in Python 1449 How do you append to a file in Python?
+1739 Why is reading lines from stdin much slower in C++ than Python?
+1543 How to remove a key from a Python dictionary?
+913 “Large data” work flows using pandas      Hot Network Questions     How many times, are they multiples?
+How to educate bachelor and master exchange students from Asia?
+Why did a gate officer and exit immigration officer try to peel my visa sticker?
+Generate array of integers that sum to zero    Does an action-reaction pair always contain the same kind of force?
+How does a Mandalorian eat food if he never takes his helmet off?
+Germany's Ladenschlussgesetz in comparison to Israel's business laws about the Sabbath    Is it possible to reach master level without studying theory?
+How divisible are you?
+Learn university maths or train for high school competitions: which is better?
+Is the "p" in "spin" really a "b"?
+Could a technologically advanced society exist as a feudal monarchy?
+Please help me spot the error in my "proof" that the sum of two irrational numbers must be irrational    How much piloting did the Apollo astronauts actually do?
+Large (70) stellar mass black hole disrupts astrophysics?
+Should I perform my first oil change at 1000 miles, or when the manual says?
+Am I being exploited by my supervisor?
+What is the right data type to store only -1 0 and 1 in postgres column?
+Gradient, Divergence and Curl    Is this DIN connector suited for MIDI devices?
+Sci-fi novel about robots which stopped humans from doing risky things    Why can a method returning Unit be overridden with method returning String when return types are not explicitly given?
+tikz: opacity of colours    Should a soda bottle be stored horizontally or vertically?
+more hot questions     Question feed     Subscribe to RSS    Question feed To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py             Stack Overflow   Questions  Jobs  Developer Jobs Directory  Salary Calculator  Help  Mobile     Products   Teams  Talent  Advertising  Enterprise     Company   About  Press  Work Here  Legal  Privacy Policy  Contact Us       Stack Exchange Network   Technology  Life / Arts  Culture / Recreation  Science  Other        Stack Overflow  Server Fault  Super User  Web Applications  Ask Ubuntu  Webmasters  Game Development   TeX - LaTeX  Software Engineering  Unix & Linux  Ask Different (Apple)  WordPress Development  Geographic Information Systems  Electrical Engineering   Android Enthusiasts  Information Security  Database Administrators  Drupal Answers  SharePoint  User Experience  Mathematica   Salesforce  ExpressionEngine® Answers  Stack Overflow em Português  Blender  Network Engineering  Cryptography  Code Review   Magento  Software Recommendations  Signal Processing  Emacs  Raspberry Pi  Stack Overflow на русском  Code Golf   Stack Overflow en español  Ethereum  Data Science  Arduino  Bitcoin  Software Quality Assurance & Testing  Sound Design   Windows Phone    more (27)        Photography  Science Fiction & Fantasy  Graphic Design  Movies & TV  Music: Practice & Theory  Worldbuilding  Video Production   Seasoned Advice (cooking)  Home Improvement  Personal Finance & Money  Academia  Law  Physical Fitness  Gardening & Landscaping   Parenting    more (11)        English Language & Usage  Skeptics  Mi Yodeya (Judaism)  Travel  Christianity  English Language Learners  Japanese Language   Chinese Language  French Language  German Language  Biblical Hermeneutics  History  Spanish Language  Islam   Русский язык  Russian Language  Arqade (gaming)  Bicycles  Role-playing Games  Anime & Manga  Puzzling   Motor Vehicle Maintenance & Repair  Board & Card Games  Bricks  Homebrewing  Martial Arts  The Great Outdoors  Poker   Chess  Sports    more (16)        MathOverflow  Mathematics  Cross Validated (stats)  Theoretical Computer Science  Physics  Chemistry  Biology   Computer Science  Philosophy  Linguistics  Psychology & Neuroscience  Computational Science    more (8)        Meta Stack Exchange  Stack Apps  API  Data        Blog  Facebook  Twitter  LinkedIn   site design / logo © 2019 Stack Exchange Inc; user contributions licensed under cc by-sa 4.0 with attribution required .
+rev 2019.12.2.35529        Stack Overflow works best with JavaScript enabled     
 

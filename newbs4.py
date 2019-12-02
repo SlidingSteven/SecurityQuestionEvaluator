@@ -121,14 +121,22 @@ def checkURL(url):
     for line in listOfQs:
         for key in dictOfWordsVals:
             if key in line:
-                stringTemp  = key + ": " + dictOfWordsReasons[key] + "\n " + line
+                stringTemp  = key + ": " + dictOfWordsReasons[key] + "<th/><th> " + line + "<th/>"
                 stringOfOutput.append(stringTemp)
                 #print(key, " : ", dictOfWordsReasons[key], "\n", line, "\n")
                 #listOfQs.append(line)
 
     for line in stringOfOutput:
-        line = line.split('\n')
+        #line = line.split('\n')
         print(line)
+
+    ##Attempt to make table better
+    stringOfOutputNew = []
+    for line in listOfQs:
+        for key in dictOfWordsVals:
+            if key in line:
+                stringTemp  = key + ": " + dictOfWordsReasons[key] + "<br/> "
+                stringOfOutputNew.append(stringTemp)
 
     return(stringOfOutput)
     #print(listOfQs)    print("are the questions safe?")

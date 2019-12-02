@@ -6595,10 +6595,42 @@ html, body {
                     This would widen the range of possibilities from the original 4 options to 6 for each of the original 4 (for a total of 24), and thats assuming they know about this format.
                 </p>
                 {% if betterFormattedList %}
-                {% for item in betterFormattedList %}
-                  <p class="col-md-3" style= "background-color:white; color:red" > {{ item }}</p>
-                {% endfor %}
-                {% endif %}
+
+                <center>
+                  <div class="col">
+                    <div class="col-md-5 text-dark bg-info">
+                      <div class="table-responsive">
+                        <table class="table table-bordered ">
+                          <thead class="thead-dark">
+                           <tr>
+                              <th>Permutations of Answers</th>
+                
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th>
+                                {% for item in betterFormattedList %} 
+                                {% autoescape false %}
+                                {{ item }}                 
+                                {% endautoescape %}
+                
+                            </tr>
+                            <tr>
+                              <th>{% endfor %}</th>
+                            </tr>
+                          </tbody>
+                        </table>
+      
+                      </div>
+    
+                    </div>
+    
+    
+                  </div></center>
+                  {% endif %}
+
+
               </div>
               <div class="col-md-4 pb-5" style=""><img class="d-block align-items-center w-100 d-flex flex-grow-0 justify-content-start img-fluid mx-auto pt-1 pb-4" src="static/SSQCheckerLogo.png"></div>
             </div>
