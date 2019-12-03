@@ -6585,16 +6585,16 @@ html, body {
               <thead class="thead-dark">
                <tr>
                   <th>Flagged Cateogry</th>
-                  <th>Flagged Word</th>
+                  <th></th>
+                  <th>Context on source page</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th>
-                    {% for item in ruling %}
-                    {{ item }}
-                    </th>
-                  <td></td>
+                    {% for item in ruling %} {% autoescape false %}
+                    {{ item }}                 {% endautoescape %}
+
                 </tr>
                 <tr>
                   <th>{% endfor %}{% endif %}</th>

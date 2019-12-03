@@ -6592,17 +6592,18 @@ html, body {
 
         </div>
       </div>
+                {% autoescape false %}
 
                 {% if ruling %}
                 <p style= "color:red">SOME UNSAFE QUESTIONS MAY HAVE BEEN FOUND</p>
                 {% for item in ruling %}
-                {% autoescape false %}
 
                 <p style= "color:red">{{ item }}</p>
-                {% endautoescape %}
 
                 {% endfor %}
                 {% endif %}
+                {% endautoescape %}
+
             </div>
             <div class="input-group input-group-lg mb-3 ">
                 <div class="input-group-prepend">

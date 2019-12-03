@@ -6582,7 +6582,15 @@ html, body {
           </div>
         </div>
       </div>
-          <! -- {% if ruling %} {% for item in ruling %} {{ item }}{% endfor %}{% endif %} -->
+          <! -- {% if ruling %} 
+          {% for item in ruling %}                
+          {% autoescape false %}
+          {{ item }}
+          {% endautoescape %}
+
+          {% endfor %}
+          {% endif %}
+        -->
         </br></br>
 
     <center><h3 class="display-4"><p style= "color:red">NO UNSAFE QUESTIONS WERE FOUND</b></p></h3></center>
@@ -6590,7 +6598,7 @@ html, body {
     <div class="container mt-auto">
       <div class="row">
         <div class="col-md-12">
-          <p class="mt-auto text-secondary"><br>Project created for Computer Security - Course&nbsp;4173 - Fall 2019</p>
+          <p class="mt-auto text-secondary"><br>Project created for Computer Security - Course&nbsp;4173 - Fall 20119</p>
         </div>
       </div>
     </div>

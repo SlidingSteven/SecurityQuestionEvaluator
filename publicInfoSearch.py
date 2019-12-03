@@ -187,6 +187,7 @@ def publicInformation(first, last, zipcode):
     #zipcode = "74012"
 
     url = "https://www.fastpeoplesearch.com/name/" + first.lower() + "-" + last.lower() + "_" + zipcode
+    print(url)
     links, names, ages = highLevelDetails(url)
 
     peopleFound = []

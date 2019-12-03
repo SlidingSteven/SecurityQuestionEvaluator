@@ -1,5 +1,4 @@
           SQS Checker        Home    The Team    Demo Mother's Maiden Name    Create a Secure Answer    Public Info Demo                   Our Project’s Motivation    Security questions are an extra measure taken to ensure that a persons account is more secure.
 Unfortunately, these security questions are easily breakable, given that a persons information and personal data can easily be found online.
 Our goal with this projejct is to parse a website for security questions andcheck to see if that particular secuity questions is strong of weak, according to our data based on various security question categories.
-Enter URL         Run Checker        Project created for Computer Security - Course 4173 - Fall 2019   
-
+Enter URL         Run Checker        Project created for Computer Security - Course 4173 - Fall 2019

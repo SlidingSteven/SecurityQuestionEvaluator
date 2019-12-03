@@ -24,6 +24,12 @@ def index():
         #return render_template('index.html')
 
 
+
+@app.route('/team', methods=['GET', 'POST'])
+def team():
+    return render_template('SSQ Checker/team.html')
+    #return render_template('index.html')
+
         
 
 @app.route('/Full-Public-Info-Search', methods=['GET', 'POST'])
@@ -67,7 +73,7 @@ def fullSearch():
                 return render_template('SSQ Checker/FullSearchDemo.html', PeopleFound = newList)
                 #return render_template('index.html', ruling = "SAFE")
             else:
-                return render_template('SSQ Checker/MaidenNameDemo.html', PeopleFound = "No Potential Information Found", flag = True)
+                return render_template('SSQ Checker/FullSearchDemo.html', Error = "No Potential Information Found", flag = True)
         except ValueError:
             return render_template('SSQ Checker/FullSearchDemo.html', Error = "No Potential Information Found")
     else:
