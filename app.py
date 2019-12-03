@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import newbs4
 import publicInfoSearch
 import itertools 
-
+import os
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -154,4 +154,4 @@ def secureAnswers():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(port = os.environ["PORT"])
