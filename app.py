@@ -5,6 +5,7 @@ import itertools
 import os
 app = Flask(__name__)
 
+#Url entry page
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -24,14 +25,14 @@ def index():
         #return render_template('index.html')
 
 
-
+# team page
 @app.route('/team', methods=['GET', 'POST'])
 def team():
     return render_template('SSQ Checker/team.html')
     #return render_template('index.html')
 
         
-
+# Page for the demonstration of a full public search
 @app.route('/Full-Public-Info-Search', methods=['GET', 'POST'])
 def fullSearch():
     if request.method =='POST':
@@ -79,7 +80,7 @@ def fullSearch():
     else:
         return render_template('SSQ Checker/FullSearchDemo.html')
 
-
+#Mother's maiden name demo
 @app.route('/Mothers-Maiden-Name-Demo', methods=['GET', 'POST'])
 def MaidenNameDemo():
     if request.method == 'POST':
@@ -111,6 +112,7 @@ def MaidenNameDemo():
 
         #return render_template('index.html')
 
+#Secure answer builder demo
 @app.route('/Secure-Answers', methods=['GET', 'POST'])
 def secureAnswers():
     if request.method == 'POST':
@@ -169,6 +171,7 @@ def secureAnswers():
 
         #return render_template('index.html')
 
+#runs the app
 if __name__ == '__main__':
     app.debug = True
     app.run(port = os.environ["PORT"])
