@@ -141,9 +141,26 @@ def secureAnswers():
                             listOfRecommendations.append(component4)
         perm = itertools.permutations(listOfRecommendations) 
         betterFormattedList = []
-        for i in list(perm): 
-            betterFormattedList.append(i[0]+"--"+i[1]+"--"+i[2])
-        print(betterFormattedList)
+        if numComponents == 1:
+            for i in list(perm): 
+                betterFormattedList.append(i[0])
+            print(betterFormattedList)
+        if numComponents == 2:
+            for i in list(perm): 
+                betterFormattedList.append(i[0]+"--"+i[1])
+            print(betterFormattedList)        
+        if numComponents == 3:
+            for i in list(perm): 
+                betterFormattedList.append(i[0]+"--"+i[1]+"--"+i[2])
+            print(betterFormattedList)
+        if numComponents == 4:
+            for i in list(perm): 
+                betterFormattedList.append(i[0]+"--"+i[1]+"--"+i[2]+"--"+i[3])
+            print(betterFormattedList)
+        if numComponents == 5:
+            for i in list(perm): 
+                betterFormattedList.append(i[0]+"--"+i[1]+"--"+i[2]+"--"+i[3]+"--"+i[4])
+            print(betterFormattedList)
         return render_template('SSQ Checker/SecureInput.html', betterFormattedList = betterFormattedList)
 
         
