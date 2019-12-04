@@ -5,24 +5,24 @@ import re
 
 
 # This code will help to parse out the plain text from the html https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
-def tag_visible(element):
+def vis_tag(element):
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
         return False
     if isinstance(element, Comment):
         return False
     return True
 
-def text_from_html(body):
+def html_to_text(body):
     soup = BeautifulSoup(body, 'html.parser')
     texts = soup.findAll(text=True)
-    visible_texts = filter(tag_visible, texts)  
+    visible_texts = filter(vis_tag, texts)  
     return u" ".join(t.strip() for t in visible_texts)
 
 def text_from_cards(body):
     soup = BeautifulSoup(body, 'html.parser')
     cards = soup.findAll("div", {"class": "card"})
     #texts = soup.findAll(text=True)
-    visible_texts = filter(tag_visible, cards)  
+    visible_texts = filter(vis_tag, cards)  
     return u" ".join(t.strip() for t in visible_texts)
 
 

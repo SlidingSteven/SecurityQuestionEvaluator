@@ -3,7 +3,9 @@ from bs4.element import Comment
 import urllib.request
 import re
 
-def tag_visible(element):
+
+# This code will help to parse out the plain text from the html https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
+def vis_tag(element):
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
         return False
     if isinstance(element, Comment):
@@ -11,10 +13,10 @@ def tag_visible(element):
     return True
 
 
-def text_from_html(body):
+def html_to_text(body):
     soup = BeautifulSoup(body, 'html.parser')
     texts = soup.findAll(text=True)
-    visible_texts = filter(tag_visible, texts)
+    visible_texts = filter(vis_tag, texts)
     return u" ".join(t.strip() for t in visible_texts)
 
 def SafeQuestions(listOfFlags,Questions):
@@ -25,7 +27,7 @@ def SafeQuestions(listOfFlags,Questions):
             return False
     return True #No flag word found
 
-
+# followed tutorial to find this 
 class AppURLopener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0"
 
@@ -34,7 +36,7 @@ def checkURL(url):
     html = opener.open(url).read()
     #stringWithQuestions = re.compile(r'([A-Z][^\?]*[\?])', re.M)
     #stringWithQuestions = re.search('^[A-Z].*\?$', str(html))
-    html = text_from_html(html)
+    html = html_to_text(html)
     #print(html)
     stringWithQuestions = re.split('(?<=[.!?]) +', str(html))
     #stringWithQuestions = re.findall('[A-Z].*process.$', str(html))
@@ -51,7 +53,7 @@ def checkURL(url):
 
     strg1 =""
     with open('out.txt', 'w') as f:
-        strg = stringWithQuestions#.findall(text_from_html(html))
+        strg = stringWithQuestions#.findall(html_to_text(html))
         for sentence in strg:
             strg1 = strg1 + sentence + "\n"
         print(strg1, file=f)

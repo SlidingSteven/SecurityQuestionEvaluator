@@ -1,87 +1,93 @@
-       Skip to primary navigation Skip to main content Skip to primary sidebar                                                           Visit LoginRadius  Resources  Contact Us        SEARCH      Search this website     Identity Blog       CLOSE  Subscribe Here!
-* *                  This iframe contains the logic required to handle Ajax powered Gravity Forms.
-Best Practices for Choosing Good Security Questions     Security questions can add an extra layer of certainty to your authentication process.
-Security questions are an alternative way of identifying your customers when they have forgotten their password, entered the wrong credentials too many times, or tried to log in from an unfamiliar device or location.
-Since the LoginRadius Identity Platform requires you to define your own security questions, we wanted to give you some basic guidelines for creating good security questions.
-What makes a good security question?
-The best security questions make it easy for legitimate customers to authenticate themselves without worrying about their account being infiltrated.
-If a question is too hard to answer due to complexity or changing circumstances, it can end up wasting your customer’s time—and ultimately, it may keep them locked out of their account.
-If the answer is too quickly researched or there are too few possible answers, it can be easy for an attacker to gain access by guessing correctly.
-You can minimize both of these outcomes by creating good security questions.
-According to the Good Security Questions website , answers to a good security question should meet these criteria:    Safe: Cannot be guessed or researched.
-Stable: Does not change over time.
-Memorable: Can be remembered.
-Simple: Is precise, easy, and consistent.
-Many: Ha s many possible answers.
-You can see examples of good security questions from the University of Virginia .
-Let’s take a look at each of these criteria in more detail.
-1.
-Safe   When choosing security questions, it’s extremely important that the correct answers cannot be guessed or researched over the internet.
-Here’s an example of a question that fails to meet these rules:    “In what county were you born?”  This question could be considered unsafe because the information can be found online.
-Also, this information may be common knowledge to friends and family members.
-Aside from these issues, if a hacker was interested in a specific account, it might be easy to brute-force their way past this question since there are only a fixed number of counties in each US state.
-2.
-Stable   A good security question should have a fixed answer, meaning that it won’t change over time.
-A good example of a security question with a stable answer:    “What is your oldest cousin’s first name?”  This example works because the answer never changes.
-Note : Questions like this one might not apply to all users.
-Asking about someone’s wedding anniversary or cousins does them no good if they have never been married or have no cousins!
-It’s important to offer your customers several questions to choose from to make sure they apply.
-Some examples of questions with unstable answers:  “What is the title and artist of your favorite song?”   “What is your work address?”  Both of these examples make for poor security questions because their answers will change for most people over time.
-Many people change their minds about their favorite things over the course of their lives, and they also may change jobs or move to a different office location.
-3.
-Memorable   A good security question should be easily answered by the account holders but not readily obvious to others or quickly researched.
-Examples of good memorable questions:    “What is your oldest sibling’s middle name?”  Most customers who have siblings know their middle name off the top of their heads, making this a good example of a memorable security question.
-This question is also excellent because someone would have to do quite a bit of digging to first find out who the customer’s oldest sibling is, and then find their middle name in order to crack this question.
-“In what city or town did your mother and father meet?”  Most customers know the answer to a question like this, making it fit the criteria of being memorable.
-It is also more difficult to guess or research this fact.
-Best of all, it fits the stability criteria as well.
-Some examples of questions with unmemorable answers:    “What is your car’s license plate number?”  Many people don’t have their license plate number memorized.
-Also, it’s relatively simple for a potential intruder to do some digging and find this information for themselves.
-“What was your favorite elementary school teacher’s name?”  The answer to this question may be quick to recall for someone younger, but for older customers, things from their childhood can be a lot foggier.
-So answers to such questions might not come so easily.
-It’s good practice to try to avoid questions from a customer’s childhood.
-4.
-Simple   A simple question has a precise answer that doesn’t create confusion.
-Some examples of questions with simple answers:  “What was your first car’s make and model?
-(e.g.
-Ford Taurus)”  “What month and day is your anniversary?
-(e.g.
-January 2)”  These both make for good security questions because the answers are specific.
-These questions show customers how to format their answers in a memorable, simple way.
-These questions can also be asked in a way that doesn’t give simple, precise answers:  “What was your first car?”  “When is your anniversary?”  5.
-Many   A good security question should have many potential answers.
-This makes guessing the answer much more difficult and will also slow down automated or brute-force attempts at gaining access to the customer’s account.
-An example of a question with many possible answers:   “What is the middle name of your oldest child?”  A question with too few possible answers:    “What is your birth month?”  But wait.
-Is there any such thing as a good security question?
-By their very nature, even so-called good security questions are vulnerable to hackers because they aren’t random—users are meant to answer them in meaningful, memorable ways.
-And those answers could be obtained through phishing , social engineering, or research.
-There’s a scene in the movie Now You See Me 2 where a magician tricks his target into giving him the answers to his bank security questions.
-The magician guesses the answers and his target corrects him with the actual information.
-It’s a fictional example, but the phishing mechanics are real.
-Many social media memes tap into the answers to common security questions, such as the name of your first pet or the street you grew up on.
-So by innocently posting your superhero name or rapper name on Facebook, you’re inadvertently sharing important personal information.
-What authentication methods are good alternatives to security questions?
-Passwords and security questions aren’t the only methods for locking down customer accounts.
-A good CIAM solution offers several secure alternatives:  Multi-factor authentication  Multi-factor authentication is a much more robust and secure method of customer authentication that relies on two or more ways of verifying the customer’s identity.
-Typically, the customer will be required to present something that they know, something they possess, and/or something they are.
-Some examples of these different factors are:    Something they know: A password, pin code, or an answer to a security question.
-Something they possess: Such as a bank card, key, or key fob.
-Something they are: A scanned fingerprint or retina, voice or face recognition.
-As an example, the MBNA bank recently decided that security questions were not doing enough for them and their customers to keep their accounts safe.
-To upgrade their security, they decided to go with two-factor authentication instead of security questions in order to verify their customer’s identities.
-Source: MBNA website  In these screenshots, you can see that the transition from security questions to two-factor authentication was fairly seamless for MBNA customers.
-They even had the option to choose how often they would be prompted to provide a security code as their second factor.
-Source: MBNA website  Strong password rules  By requiring your customers to follow strong password rules , you minimize the risk of hackers brute-forcing their way into their accounts.
-Lengthy alphanumeric passwords with special and non-repeating characters are much more difficult for an attacker to guess.
-It also takes significantly longer for brute force programs to break in.
-Passwordless Login  Passwordless Login takes the password right out of the equation.
-Customers log in with a key fob, a biometric such as a fingerprint, or a magic link.
-This login method eliminates the issue of customers forgetting passwords entirely, and it also makes it impossible for hackers to crack their accounts by brute-forcing.
-If you’re interested in learning why passwords are slowly becoming a thing of the past, download our e-book  The Death of Passwords .
-There are better authentication methods than passwords and security questions available for your company—and with support from LoginRadius, you can adopt them quickly and easily.
-Related Posts  5 Ways to Enhance Customer Experience in E-commerce This Holiday  3 Reasons Why B2C Enterprises Should Use Single Sign-on Authentication  What Is Single Sign-On (SSO)?
-Previous post  Next post      Primary Sidebar  Free update on great new content.
-sign up        Select by Category:    Industry News  Customer Experience  Privacy and Compliance  Security     Select by Industry:    Retail  Media and Publication  Public Sector  Travel and Hospitality  Other        Recent Posts    One World Identity Report Names LoginRadius a Customer Identity and Access Management (CIAM) Industry Leader    5 Ways to Enhance Customer Experience in E-commerce This Holiday    7 Benefits of Single Sign-On (SSO)    Cybersecurity Best Practices and Risks That Every Enterprise Should Know [Infographic]    Cloud Security Challenges Today: Expert Advice on Keeping your Business Safe       Reap the benefits of CCPA compliance.
-Check out our free white paper to see how.
-Download Now             ©Copyright 2013-2019, LoginRadius  Privacy Policy | Terms | Security Policy | Site Map                   
+             Stack Overflow      Products    Customers    Use cases         Stack Overflow  Public questions and answers      Teams  Private questions and answers for your team      Enterprise  Private self-hosted questions and answers for your enterprise      Talent  Hire technical talent      Advertising  Reach developers worldwide             Loading…             Log in  Sign up      current community          Stack Overflow     help  chat          Meta Stack Overflow       your communities     Sign up or log in to customize your list.
+more stack exchange communities   company blog              By using our site, you acknowledge that you have read and understand our Cookie Policy , Privacy Policy , and our Terms of Service .
+Home     Public     Stack Overflow     Tags    Users    Jobs        Teams   What’s this?
+Teams  Q&A for Work  Stack Overflow for Teams is a private, secure spot for you and
+                                                            your coworkers to find and share information.
+Learn more                  First 25 Users Free                Python, Read from txt file and split data   Ask Question      Asked  4 years ago    Active  4 years ago    Viewed 4k times           -3           This is a programming exercise that I am working on.
+So I have this text file (.txt) with lines that look something like this:  'X', ['X', 'a', ...
+, 'b'], 'There should be 5 of X in this vector'  And what I want is to define a function that reads this data into python line by line and send each line back as three variables, for this specific line above I want the function to send back this:  var = 'X'
+vek = ['X', 'a', ...
+, 'b']
+strng = 'There should be 5 of X in this vector'  this is how far i've got  def reading(file, linenumber):
+
+    text = open(file, 'r')
+    data = text.readlines()
+
+
+    return something
+    text.close()  When I have red this into python I want to use this returned data in a code that "counts how many times the variable (var) are repeated in the vector/list (vek) and then print out that number to see if it agree with the statement (strng).
+I think I can handle this last part, I just need some help with the reading and splitting.
+Also I want to say that I am really new into python, I saw my first code for like 2 weeks ago.
+I have however done abit MATLAB so I am familiar with for, while, if-elif-else and I understand some basic programming.
+I am using 2.7 version.
+Please have some patience with me :)     python  python-2.7       share | improve this question      edited Nov 11 '15 at 15:36      Claessie         asked Nov 11 '15 at 14:46       Claessie Claessie   123 1 1 silver badge 5 5 bronze badges                 1      What's your specific problem?
+YOu need to know how to convert each "line" in to the three variables?
+Also, can you describe what sort of data structure you want to return from this function?
+– David Zemens  Nov 11 '15 at 14:51               I'll try to edit the question some to make it more clear.
+This is all very new to me, I don't really know how to use the proper terminology and my code isn't that professional, for that I apologies.
+– Claessie  Nov 11 '15 at 15:23            I think I have an idea about what you're trying to do, check out my answer below as I have made a revision to return the specified linenumber, as valid python objects instead of string literals.
+– David Zemens  Nov 11 '15 at 15:24            Ok, I edited my question a bit now, maybe it helps.
+Will take a look at your comment and try some on my own now :) – Claessie  Nov 11 '15 at 15:37            Thanks, it's clear now what you want to do.
+I think I made the right assumptions in my answer.
+– David Zemens  Nov 11 '15 at 15:38        add a comment  |            1 Answer 1     active  oldest  votes            3          This line will read the entire file into a list of "lines" (string objects)  data = text.readlines()  Now, you need to use the split(',') method on each string to split each line on the comma delimiter  for line in data:
+    l = line.strip().split(',')
+    var, vek, strng =  l[0], l[1:-1], l[-1]  This will return literal strings, which is probably not hat you want, eg  >>> var
+"'@'"
+>>> vek
+[" ['list element1'", " 'list element2'", "'more list elements1']"]
+>>> strg
+" 'A string1'"  Assuming you want to return the specified linenumber from the file, as valid python objects (e.g., vek should be a list, not a string that looks like a list), then this should work:  def reading(path, linenumber):
+    with open(path, 'r') as text:
+        data = text.readlines()
+    if linenumber <= len(data):
+        l = data[linenumber-1].strip().split(',')
+        # Here i use the map function:
+        var, vek, strg = map(eval, [l[0], ','.join(l[1:-1]).strip(), l[-1]])
+
+        # You could do each on its own line, like below:
+        #var = eval(l[0])
+        #vek = eval(','.join(l[1:-1]).strip()) ## converts this to python list obj.
+        #strg = eval(l[-1])
+        return var, vek, strg
+    else:
+        return (None, None, None)      share | improve this answer      edited Nov 11 '15 at 15:57             answered Nov 11 '15 at 14:51       David Zemens David Zemens   48.8k 10 10 gold badges 60 60 silver badges 107 107 bronze badges                    Don't use that part, use the function reading as I've provided it at the bottom of the answer.
+– David Zemens  Nov 11 '15 at 15:55            oh ok!
+I deleted my first comment.
+It was a mess since the code didn't come out right, how do I comment code here ?
+– Claessie  Nov 11 '15 at 15:57            I made a revision to that part of the answer anyways :)  You comment code using the ` character (it is under the ~ usually).
+But please avoid trying to put lots of code in a comment, if you have additional questions, prefer to revise your Q to include the additional details, as code doesn't format well (no line breaks, indents, etc.) in the comments.
+– David Zemens  Nov 11 '15 at 15:58           add a comment  |             Your Answer                  Thanks for contributing an answer to Stack Overflow!
+Please be sure to answer the question .
+Provide details and share your research!
+But avoid … Asking for help, clarification, or responding to other answers.
+Making statements based on opinion; back them up with references or personal experience.
+To learn more, see our tips on writing great answers .
+draft saved  draft discarded             Sign up or log in    Sign up using Google   Sign up using Facebook   Sign up using Email and Password       Post as a guest    Name           Email  Required, but never shown              Post as a guest    Name           Email  Required, but never shown            Post Your Answer  Discard  By clicking “Post Your Answer”, you agree to our terms of service , privacy policy and cookie policy      Not the answer you're looking for?
+Browse other questions tagged python  python-2.7 or ask your own question .
+Blog          Preventing the Top Security Weaknesses Found in Stack Overflow Code Snippets             Podcast: A Conversation with the Author of Black Software     Featured on Meta          Feedback post: Moderator review and reinstatement processes             Upvotes on questions will now be worth the same as upvotes on answers             We’re lowering the close/reopen vote threshold from 5 to 3 for good this…        Related   2181 How do I copy a file in Python?
+1168 Extracting extension from filename in Python 1389 How do you read from stdin?
+2028 How to read a file line-by-line into a list?
+1043 Find all files in a directory with extension .txt in Python 1450 How do you append to a file in Python?
+1740 Why is reading lines from stdin much slower in C++ than Python?
+1544 How to remove a key from a Python dictionary?
+913 “Large data” work flows using pandas      Hot Network Questions     How test cases designing is different for GUI & API?
+How to move directory into a directory with the same name?
+How much do I need to invest monthly to accumulate a given amount?
+Is there a way to add salted hashing to my user authentication without breaking my former login server    Can a Druid Goblin use Nimble Escape while Wild Shaped into a non-agile animal form?
+How to educate bachelor and master exchange students from Asia?
+Did Roger Rabbit exist prior to the film "Who Framed Roger Rabbit?"    In OOP, 'protected' keyword is not required?
+Where is the Windows license key on Windows 10?
+A Riddle of Opportunity    Why do cargo airlines frequently choose passenger aircraft rather than aircraft designed specifically for cargo?
+What's the difference between freedom and ''the freedom'' here?
+LilyPond - how to write a basic makefile    Aces, twos, threes, and fours in a row    How does Bolas's Citadel work?
+Visual Studio Code PHP Intelephense Keep Showing Not Necessary Error    Does the PS4 still *beep* when coming out of Rest mode?
+Jumping to extend one's vertical reach?
+Is a I sus2 chord the same as a Vsus4 chord?
+Can a VASIMR Plasma engine be used for vertical takeoff?
+Is it possible for a moon to have a higher surface gravity than the planet it is attached to?
+Is there absolutely any way (hook or crook) to listen to ATC in India, especially Bangalore?
+How to protect assets from being passed to a beneficiary in a will when they are likely to die soon also    Should user input be validated for its length in PHP (server side) as a security measure?
+more hot questions     Question feed     Subscribe to RSS    Question feed To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py             Stack Overflow   Questions  Jobs  Developer Jobs Directory  Salary Calculator  Help  Mobile     Products   Teams  Talent  Advertising  Enterprise     Company   About  Press  Work Here  Legal  Privacy Policy  Contact Us       Stack Exchange Network   Technology  Life / Arts  Culture / Recreation  Science  Other        Stack Overflow  Server Fault  Super User  Web Applications  Ask Ubuntu  Webmasters  Game Development   TeX - LaTeX  Software Engineering  Unix & Linux  Ask Different (Apple)  WordPress Development  Geographic Information Systems  Electrical Engineering   Android Enthusiasts  Information Security  Database Administrators  Drupal Answers  SharePoint  User Experience  Mathematica   Salesforce  ExpressionEngine® Answers  Stack Overflow em Português  Blender  Network Engineering  Cryptography  Code Review   Magento  Software Recommendations  Signal Processing  Emacs  Raspberry Pi  Stack Overflow на русском  Code Golf   Stack Overflow en español  Ethereum  Data Science  Arduino  Bitcoin  Software Quality Assurance & Testing  Sound Design   Windows Phone    more (27)        Photography  Science Fiction & Fantasy  Graphic Design  Movies & TV  Music: Practice & Theory  Worldbuilding  Video Production   Seasoned Advice (cooking)  Home Improvement  Personal Finance & Money  Academia  Law  Physical Fitness  Gardening & Landscaping   Parenting    more (11)        English Language & Usage  Skeptics  Mi Yodeya (Judaism)  Travel  Christianity  English Language Learners  Japanese Language   Chinese Language  French Language  German Language  Biblical Hermeneutics  History  Spanish Language  Islam   Русский язык  Russian Language  Arqade (gaming)  Bicycles  Role-playing Games  Anime & Manga  Puzzling   Motor Vehicle Maintenance & Repair  Board & Card Games  Bricks  Homebrewing  Martial Arts  The Great Outdoors  Poker   Chess  Sports    more (16)        MathOverflow  Mathematics  Cross Validated (stats)  Theoretical Computer Science  Physics  Chemistry  Biology   Computer Science  Philosophy  Linguistics  Psychology & Neuroscience  Computational Science    more (8)        Meta Stack Exchange  Stack Apps  API  Data        Blog  Facebook  Twitter  LinkedIn   site design / logo © 2019 Stack Exchange Inc; user contributions licensed under cc by-sa 4.0 with attribution required .
+rev 2019.12.3.35539        Stack Overflow works best with JavaScript enabled     
 
