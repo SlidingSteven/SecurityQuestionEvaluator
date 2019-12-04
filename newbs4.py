@@ -6,40 +6,52 @@ import re
 
 # This code will help to parse out the plain text from the html https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
 def vis_tag(element):
+    #discard invisible html because it does not matter to this project
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
         return False
+    #return visible
     if isinstance(element, Comment):
         return False
     return True
 
 
 def html_to_text(body):
+    #get the body of html
     soup = BeautifulSoup(body, 'html.parser')
+    #find text
     texts = soup.findAll(text=True)
+    #apply above filter to html
     visible_texts = filter(vis_tag, texts)
     return u" ".join(t.strip() for t in visible_texts)
 
 def SafeQuestions(listOfFlags,Questions):
-
+    #Old function to determine if unsafe questions existed
     for word in listOfFlags:
         if word in Questions:#Not safe!
             #print(Questions)
             return False
     return True #No flag word found
 
-# followed tutorial to find this 
+# followed tutorial to find this.  
+# This was a hurdle because it seems some webpages will and wont be accessed with beautiful soup
 class AppURLopener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0"
 
+# function to check url for targeted words
 def checkURL(url):
+    #use SO function to open the webpage 
     opener = AppURLopener()
+    #get the html
     html = opener.open(url).read()
     #stringWithQuestions = re.compile(r'([A-Z][^\?]*[\?])', re.M)
     #stringWithQuestions = re.search('^[A-Z].*\?$', str(html))
+    # use above funtion to get all of the visible text
     html = html_to_text(html)
     #print(html)
+    #split visible text on punctuation 
     stringWithQuestions = re.split('(?<=[.!?]) +', str(html))
     #stringWithQuestions = re.findall('[A-Z].*process.$', str(html))
+    # find the questions on the page
     listOfQs = []
     for line in stringWithQuestions:
         if "?" in line:
@@ -123,6 +135,7 @@ def checkURL(url):
     for line in listOfQs:
         for key in dictOfWordsVals:
             if key in line:
+                #HTML Formats how the table will print out
                 stringTemp  = key + ": " + dictOfWordsReasons[key] + "<th/><th> " + line + "<th/>"
                 stringOfOutput.append(stringTemp)
                 #print(key, " : ", dictOfWordsReasons[key], "\n", line, "\n")
@@ -137,6 +150,7 @@ def checkURL(url):
     for line in listOfQs:
         for key in dictOfWordsVals:
             if key in line:
+                #HTML Formats how the table will print out
                 stringTemp  = key + ": " + dictOfWordsReasons[key] + "<br/> "
                 stringOfOutputNew.append(stringTemp)
 

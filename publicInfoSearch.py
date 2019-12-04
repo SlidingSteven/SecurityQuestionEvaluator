@@ -6,15 +6,20 @@ import re
 
 # This code will help to parse out the plain text from the html https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
 def vis_tag(element):
+    #discard invisible html because it does not matter to this project
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
         return False
+    #return visible
     if isinstance(element, Comment):
         return False
     return True
 
 def html_to_text(body):
+    #get the body of html
     soup = BeautifulSoup(body, 'html.parser')
+    #find text
     texts = soup.findAll(text=True)
+    #apply above filter to html
     visible_texts = filter(vis_tag, texts)  
     return u" ".join(t.strip() for t in visible_texts)
 
@@ -33,10 +38,13 @@ def SafeQuestions(listOfFlags,Questions):
             return False
     return True #No flag word found
 
-
+# followed tutorial to find this.  
+# This was a hurdle because it seems some webpages will and wont be accessed with beautiful soup
 class AppURLopener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0"
 
+#This is used to make a person object for each person the fastpeoplesearch returned
+#since we have to investigate all possibilities we found this the easiest way to keep everything straight
 class Person:
     def __init__(self, name,age,link,family,aliases,addresses, mothersMaidenNames):
         self.name = name
@@ -63,20 +71,26 @@ class Person:
 
 
 
-
+#formats the url to include input from the user
 def formatURL(url):
     base = 'https://www.fastpeoplesearch.com'
     base += url
     return base
 
+#get high level details on each person returned
 def highLevelDetails(url):
+    #initialize new opener
     opener = AppURLopener()
+    #read contents returned
     html = opener.open(url).read()
+    #get the soup
     soup = BeautifulSoup(html, 'html.parser')
+    #grab the more in depth details link
     links = soup.findAll("a", {"class": "btn btn-primary link-to-details"}, href=True)
     h3s = soup.findAll("h3")
     listOfNames = []
     listOfAges = []
+    #get everyones full name and age
     for element in h3s:
         if "Full Name" in str(element):
             listOfNames += element
@@ -89,7 +103,7 @@ def highLevelDetails(url):
         newLink = formatURL(link['href'])
         listOfLinks.append(newLink)
     #i = 0
-
+    # i dont think this ends up getting used but too scared to take out at this point
     addresses = soup.findAll("a", {"title": re.compile('^Search people living at')}, text=True)
     listOfAddresses = []
     for address in addresses:
@@ -100,6 +114,7 @@ def highLevelDetails(url):
 
     #print(listOfAddresses)
     i = 0
+    #build list of family members
     for person in listOfNames:
         ##print("**********BEGGINING OF PERSON***********")
         ##print(person, listOfAges[i], listOfLinks[i], listOfAddresses[i])
@@ -127,11 +142,15 @@ def highLevelDetails(url):
         i +=1
     return listOfLinks, listOfNames, listOfAges
 
-
+# the last function checked high level but returned a link to drill into each person found
 def checkFurtherDetails(url):
+    #initialize opener
     opener = AppURLopener()
+    #open the link to the person
     html = opener.open(url).read()
+    #get the soup
     soup = BeautifulSoup(html, 'html.parser')
+    #find all relatives
     relatives = soup.findAll("div", {"id": "relative-links"})
     #or relative in relatives:
     para = relatives[0].find('p')
