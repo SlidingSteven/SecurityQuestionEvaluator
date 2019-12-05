@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup
 from bs4.element import Comment
 import urllib.request
 import re
-
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 # This code will help to parse out the plain text from the html https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
 def vis_tag(element):
@@ -31,8 +32,7 @@ def SafeQuestions(listOfFlags,Questions):
             #print(Questions)
             return False
     return True #No flag word found
-import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
+
 # followed tutorial to find this.  
 # This was a hurdle because it seems some webpages will and wont be accessed with beautiful soup
 class AppURLopener(urllib.request.FancyURLopener):
@@ -69,7 +69,7 @@ def checkURL(url):
         strg = stringWithQuestions#.findall(html_to_text(html))
         for sentence in strg:
             strg1 = strg1 + sentence + "\n"
-        print(strg1, file=f)
+        #print(strg1, file=f)
 
     listOfFlags1 = ["maiden", "address", "name"]
     dictOfWordsVals = {
