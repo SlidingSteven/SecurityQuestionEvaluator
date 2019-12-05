@@ -31,7 +31,8 @@ def SafeQuestions(listOfFlags,Questions):
             #print(Questions)
             return False
     return True #No flag word found
-
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 # followed tutorial to find this.  
 # This was a hurdle because it seems some webpages will and wont be accessed with beautiful soup
 class AppURLopener(urllib.request.FancyURLopener):
