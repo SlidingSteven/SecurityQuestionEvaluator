@@ -1,13 +1,21 @@
 # SecurityQuestionEvaluator
 
+## Goal
+* Provide a way for people with no background in computer security to gain insight on the security level of security questions.  
+* Provide insight to users on how much information can be divulged from a small source of public information.
+
+## Link
+You can visit our site here- https://sqs-checker.herokuapp.com/
+
 ## CHECKPOINTS 
 1. [x] Research Paper 
 2. [x] Lightning Talk
 3. [x] Meet with professor
 4. [ ] Final Product 
 
+
 ## TODO
-* Research common security questions and determine what is weak/strong.  Provide users with a list for them to use on websites they may be building.
+* Update README with how to run code locally.
 
 ## How To Run
 This flask app runs on Python 3.  When I downloaded Python 3 it makes me use "python3" in the shell to run it, some people may only need to use 'python'.  You can use pipenv to install dependencies and activate the shell-
@@ -39,10 +47,3 @@ filenameWithNoExtension.functionName(WhateverParameters, you, need)
 
 If you would rather write JS functions straight on the HTML pages that works too, but you will have to figure out how to make it work.
 
-# Active HTML Files 
-* SSQ Checker/index.html
-* SSQ Checker/indexSearch.html
-* SSQ Checker/FullSearchDemo.html
-* SSQ Checker/MaidenDemoSearch.html
-* SSQ Checker/MaidenNameDemo.html
-* SSQ Checker/SecureInput.html
