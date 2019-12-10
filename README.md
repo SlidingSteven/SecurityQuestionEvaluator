@@ -24,8 +24,9 @@ python3 -m pipenv shell
 
 Next navigate to the folder with the file app.py and run
 ```
-python3 app.py
+PORT=5000 python3 app.py
 ```
 Then go to http://127.0.0.1:5000/ to see the index page
 
 
+## THE PROBLEM 
