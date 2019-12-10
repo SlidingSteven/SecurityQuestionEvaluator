@@ -31,4 +31,25 @@ python3 app.py
 ```
 Then go to http://127.0.0.1:5000/ to see the index page
 
+# Directions to Run SQS Checker
+## Home Page
+To check the strength of a set of particular security questions on a particular page
+* enter the URL into the input. 
+* Select 'Run checker' to see if unsafe questions were found or not.
 
+## The Team
+Visit this page to learn more about our team and their roles in the creation of the SQS Checker.
+
+## Demo Mothers Maiden Name
+To find if your mother maiden name can be found, enter first name, last name, zip code.
+* Select 'Run checker' to view results.
+
+## Creating a Secure answer
+In the case that you have no other option but to answer a weak question then the best thing you can do is to add components to your answer. You can add up to 5 components, and the SQS Checker will generate various passwords related to your mothers maiden name. They will contain special characters, which will make your security question harder to crack.
+* Enter mothers name for component 1
+* mothers birthday for component 2
+and so on.
+
+## Public Info Demo
+* Enter First name, last name and zipcode
+* Select run checker to check if your public information can be found by the SQS Checker
