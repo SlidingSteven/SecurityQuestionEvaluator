@@ -64,11 +64,14 @@ def fullSearch():
             #print("FROM APP- ", maidenNames)
             #exit()
             if PeopleFound:
+                print('render this')
                 return render_template('SSQ Checker/FullSearchDemo.html', PeopleFound = newList)
                 #return render_template('index.html', ruling = "SAFE")
             else:
-                return render_template('SSQ Checker/MaidenNameDemo.html', PeopleFound = "No Potential Information Found", flag = True)
+                print('render that')
+                return render_template('SSQ Checker/FullSearchDemo.html', PeopleFound = "No Potential Information Found", flag = True)
         except ValueError:
+            print('render error')
             return render_template('SSQ Checker/FullSearchDemo.html', Error = "No Potential Information Found")
     else:
         return render_template('SSQ Checker/FullSearchDemo.html')

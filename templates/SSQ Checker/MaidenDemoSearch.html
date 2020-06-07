@@ -6588,63 +6588,94 @@ html, body {
                   </div>
                 </div>
                 {% if listOfPeople %}
-                <p class="lead">Given your input we found a list of names we think could be your mother's maiden name.  
-                  As short as this list is, a malicious user could shorten this list even further.  If an attacker has a sufficiently short list they 
+                <p class=" lead">Given your input we found a list of names we think could be your mother's maiden name.
+                  As short as this list is, a malicious user could shorten this list even further.  If an attacker has a sufficiently short list they
                   can crack into an account using a brute force attack by entering each of the names found below.
                 </p>
-                  {% if listOfPeople %}
+
                     <br\>
-                    <p style="color:red" class="lead">{{ listOfPeople }}</p> 
-                  {% endif %}
+                    <p class="col lead">
+                      If you have no other choice than to answer this question there are still secure ways to answer it.  By answering with a phrase or a
+                      certain format you can significantly raise the pool of candidates the attacker would have to choose from and they would no longer be
+                      entered into public record.
+                    </p>
+                    <!--<p style="color:red" class="lead">{{ listOfPeople }}</p>-->
+
+
+                    <center>
+                  <div class="col">
+                    <div class="col-md-5 text-dark bg-info">
+                      <div class="table-responsive">
+                        <table class="table table-bordered ">
+                          <thead class="thead-dark">
+                           <tr>
+                              <th>Possible Mother's Maiden Names</th>
+                
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th>
+                                {% for item in listOfPeople %} 
+                                {% autoescape false %}
+                                {{ item }}                 
+                                {% endautoescape %}
+                
+                            </tr>
+                            <tr>
+                              <th>{% endfor %}</th>
+                            </tr>
+                          </tbody>
+                        </table>
+      
+                      </div>
+    
+                    </div>
+    
+    
+                  </div></center>
                   <br>
-                  <br>
-                  <p class="lead">
-                  If you have no other choice than to answer this question there are still secure ways to answer it.  By answering with a phrase or a 
-                  certain format you can significantly raise the pool of candidates the attacker would have to choose from and they would no longer be 
-                  entered into public record.
                   <div class="col-md-12"><a href="/Secure-Answers" class="button"><button type="submit" class="btn btn-lg btn-success shadow-sm">Build a secure answer</button></a></div>
-                
-                </p>
-                
+
                 {% else %}
                 <p class="lead">
-                  There are many insecure questions but one of the most often used ones is "What is your mother's maiden name?" 
-                  This question is incredibly insecure and you can see how by searching yourself below.  We compile public information on a 
+                  There are many insecure questions but one of the most often used ones is "What is your mother's maiden name?"
+                  This question is incredibly insecure and you can see how by searching yourself below.  We compile public information on a
                   person and use it to automate a list of potential mother's maiden names.  This is based on the publicly known family members
-                  associated with you and their last names.  A determined attacker could easily narrow the list further by checking your social media or 
-                  doing more research on their victim. 
+                  associated with you and their last names.  A determined attacker could easily narrow the list further by checking your social media or
+                  doing more research on their victim.
                    </p>
-                {% endif %}
+                  <form method = "POST">
+      
+                  <div class="input-group input-group-lg mb-12 col-md-5">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" style="color:black" >First Name</span>
+                    </div>
+                    <input type="text" name="first" class="form-control shadow-sm form-control-lg" placeholder="Enter first name" required="required" >
+                  </div>
+      <br/>
+                  <div class="input-group input-group-lg mb-3 col-md-5">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="color:black" >Last Name</span>
+                  </div>
+                <input type="text" name="last" class="form-control shadow-sm form-control-lg" placeholder="Enter last name" required="required" >
+                  </div>
+                  <div class="input-group input-group-lg mb-3 col-md-5">
+      
+                <div class="input-group-prepend">
+                  <span class="input-group-text" style="color:black" >Zip Code</span>
+                </div>
+              <input type="text" name="zipcode" class="form-control shadow-sm form-control-lg" placeholder="Enter zipcode name" required="required" >
+      </div>
               </div>
 
               <div class="col-md-3 pb-5" style=""><img class="d-block align-items-center w-100 d-flex flex-grow-0 justify-content-start img-fluid mx-auto pt-1 pb-4" src="static/SSQCheckerLogo.png"></div>
-            </div>  
-            <form method = "POST">
 
-            <div class="input-group input-group-lg mb-3 col-md-4">
-              <div class="input-group-prepend">
-                <span class="input-group-text" style="color:black" >First Name</span>
-              </div>
-              <input type="text" name="first" class="form-control shadow-sm form-control-lg" placeholder="Enter first name" required="required" >
-            </div>
 
-            <div class="input-group input-group-lg mb-3 col-md-4">
-            <div class="input-group-prepend">
-              <span class="input-group-text" style="color:black" >Last Name</span>
-            </div>
-          <input type="text" name="last" class="form-control shadow-sm form-control-lg" placeholder="Enter last name" required="required" >
-            </div>
-            <div class="input-group input-group-lg mb-3 col-md-4">
-
-          <div class="input-group-prepend">
-            <span class="input-group-text" style="color:black" >Zip Code</span>
-          </div>
-        <input type="text" name="zipcode" class="form-control shadow-sm form-control-lg" placeholder="Enter zipcode name" required="required" >
-</div>
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row ">
           <!--<input type="submit" value="Submit">-->
           <div class="col-md-12"><button class="btn btn-lg btn-success shadow-sm">Run Checker</button></div>
 
@@ -6652,7 +6683,10 @@ html, body {
       </div>
     </div>
   </form><br><br>
+  {% endif %}
 
+<br>
+<br>
     <div class="container mt-auto">
       <div class="row">
         <div class="col-md-12">

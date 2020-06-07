@@ -6639,13 +6639,40 @@ html, body {
     </div>
   </form><br><br>
   {% if PeopleFound %}
-  {% for person in PeopleFound %}
-    {% autoescape false %}
-        <p style= "color:red"> {{ person }}</p>
-      {% endautoescape %}
 
-  {% endfor %}
-  {% endif %}
+  <center>
+    <div class="col">
+      <div class="col-md-5 text-dark bg-info">
+        <div class="table-responsive">
+          <table class="table table-bordered ">
+            <thead class="thead-dark">
+             <tr>
+                <th>People Found</th>
+  
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                  {% for item in PeopleFound %} 
+                  {% autoescape false %}
+                  {{ item }}                 
+                  {% endautoescape %}
+  
+              </tr>
+              <tr>
+                <th>{% endfor %}</th>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+
+    </div></center>
+    {% endif %}
   {% if Error %}
   <p style= "color:red"> {{ Error }}</p>
 
