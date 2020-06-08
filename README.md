@@ -9,6 +9,7 @@ In today’s world, technology has become quite prevalent, and is frequently use
 
 ## Link
 You can visit our site here- https://sqs-checker.herokuapp.com/
+Or view an API of the public info demo here- https://sqs-checker.herokuapp.com/Full-Public-Info-Search?first_name=&last_name=&zipcode=
 
 ## CHECKPOINTS 
 1. [x] Research Paper 

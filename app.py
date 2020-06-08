@@ -80,23 +80,26 @@ def fullSearch():
             return render_template('SSQ Checker/FullSearchDemo.html', Error = "No Potential Information Found")
     else:
         if 'first_name' in request.args and 'last_name' in request.args and 'zipcode' in request.args:
-            first_name = request.args['first_name']
-            last_name = request.args['last_name']
-            zipcode = request.args['zipcode']
-            PeopleFound = publicInfoSearch.publicInformation(first_name, last_name, zipcode)
-            i=0
-            data_list = []
-            for person in PeopleFound:
-                curr_person = {
-                    "name": PeopleFound[i].get_name(),
-                    "age": PeopleFound[i].get_age(),
-                    "addresses": PeopleFound[i].get_addresses(),
-                    "aliases": PeopleFound[i].get_aliases(),
-                    "family": PeopleFound[i].get_family()
-                }
-                data_list.append(curr_person)
-                i+=1
-            return jsonify(data_list)
+            try: 
+                first_name = request.args['first_name']
+                last_name = request.args['last_name']
+                zipcode = request.args['zipcode']
+                PeopleFound = publicInfoSearch.publicInformation(first_name, last_name, zipcode)
+                i=0
+                data_list = []
+                for person in PeopleFound:
+                    curr_person = {
+                        "name": PeopleFound[i].get_name(),
+                        "age": PeopleFound[i].get_age(),
+                        "addresses": PeopleFound[i].get_addresses(),
+                        "aliases": PeopleFound[i].get_aliases(),
+                        "family": PeopleFound[i].get_family()
+                    }
+                    data_list.append(curr_person)
+                    i+=1
+                return jsonify(data_list)
+            except:
+                return "Error: A field is missing.  See below for formatting-\nhttps://sqs-checker.herokuapp.com/Full-Public-Info-Search?first_name=Bobby&last_name=Sue&zipcode=12345"
         return render_template('SSQ Checker/FullSearchDemo.html')
 
 #Mother's maiden name demo
