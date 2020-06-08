@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
-  <link rel="icon">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
   <title>The SQS Checker | Home</title>
+  <!--<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">-->
+
   <meta name="description" content="The SSQ Checker for Computer Security">
   <meta name="keywords" content="Comp Securtiy, etc.">
   <meta name="author" content="Pingendo">
@@ -14,7 +16,7 @@
   <!--<<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">-->
   <!--<link rel="stylesheet" href="wireframe.css">-->
 
-    <title>Flask app</title>
+    <title>URL Checker</title>
 
  <!--< <link rel="stylesheet" href="C:\Users\Steven Tucker\Desktop\HW\SeniorYear\CompSec\SemesterProject\templates\SSQ Checker\wireframe.css">-->
 </head>
@@ -4096,7 +4098,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4116,7 +4118,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4133,7 +4135,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4162,7 +4164,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -6556,7 +6558,7 @@ html, body {
                     <a class="nav-link active active" href="/"><b>Home</b></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"><b>The Team</b></a>
+                    <a class="nav-link" href="/team"><b>The Team</b></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/Mothers-Maiden-Name-Demo"><b>Demo Mother's Maiden Name</b></a>
@@ -6567,16 +6569,14 @@ html, body {
                   <li class="nav-item">
                     <a class="nav-link" href="/Full-Public-Info-Search"><b>Public Info Demo</b></a>
                   </li>
-
                 </ul>
               </div>
             </div>
           </nav>
         </div>
       </div>
-    </div>
     <form method = "POST">
-
+<br><br>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -6585,38 +6585,45 @@ html, body {
               <div class="col-md-8" style="">
                 <div class="row">
                   <div class="mx-auto pb-2 col-md-9">
-                    <h1 contenteditable="false">Research Output</h1>
+                    <h1 contenteditable="false">Our Project’s Motivation</h1>
                   </div>
                 </div>
+                <p class="lead">Security questions are an extra measure taken to ensure that a persons account is more secure. 
+                  Unfortunately, these security questions are easily breakable, given that a persons information and personal data can easily be found online.&nbsp;<br><br>
+                  Our goal with this project is to parse a website for security questions and check to see if that particular secuity questions is strong or weak, according 
+                  to our data based on various security question categories. </p>
+              </div>
+              <div class="col-md-4 pb-5" style=""><img class="d-block align-items-center w-100 d-flex flex-grow-0 justify-content-start img-fluid mx-auto pt-1 pb-4" src="static/SSQCheckerLogo.png"></div>
+
+        </div>
+      </div>
+                {% autoescape false %}
 
                 {% if ruling %}
                 <p style= "color:red">SOME UNSAFE QUESTIONS MAY HAVE BEEN FOUND</p>
                 {% for item in ruling %}
-                {% autoescape false %}
 
                 <p style= "color:red">{{ item }}</p>
-                {% endautoescape %}
 
                 {% endfor %}
                 {% endif %}
-                </div>
-              <div class="col-md-4 pb-5" style=""><img class="d-block align-items-center w-100 d-flex flex-grow-0 justify-content-start img-fluid mx-auto pt-1 pb-4" src="static/SSQCheckerLogo.png"></div>
+                {% endautoescape %}
+
             </div>
             <div class="input-group input-group-lg mb-3 ">
                 <div class="input-group-prepend">
                   <span class="input-group-text" style="color:black" >Enter URL</span>
                 </div>
                 <input type="text" name="url" class="form-control shadow-sm form-control-lg" placeholder="Enter the url: http://.." required="required" >          </div>          </div>
-        </div>
       </div>
       <div class="row">
           <!--<input type="submit" value="Submit">-->
           <div class="col-md-12"><button type="submit" class="btn btn-lg btn-success shadow-sm">Run Checker</button></div>
 
-        <!--<div class="col-md-12"><div class="btn btn-lg btn-success shadow-sm" style=""><b class="" style="" >Run Checker</b></div></div>-->
+        <!--<div class="col-md-12"><div class="btn btn-lg btn-success shadow-sm" style=""><b class="" style="">Run Checker</b></div></div>-->
       </div>
     </div>
-  </form><br><br>
+  </form>
 
     <div class="container mt-auto">
       <div class="row">

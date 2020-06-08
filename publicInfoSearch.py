@@ -5,24 +5,29 @@ import re
 
 
 # This code will help to parse out the plain text from the html https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
-def tag_visible(element):
+def vis_tag(element):
+    #discard invisible html because it does not matter to this project
     if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
         return False
+    #return visible
     if isinstance(element, Comment):
         return False
     return True
 
-def text_from_html(body):
+def html_to_text(body):
+    #get the body of html
     soup = BeautifulSoup(body, 'html.parser')
+    #find text
     texts = soup.findAll(text=True)
-    visible_texts = filter(tag_visible, texts)  
+    #apply above filter to html
+    visible_texts = filter(vis_tag, texts)  
     return u" ".join(t.strip() for t in visible_texts)
 
 def text_from_cards(body):
     soup = BeautifulSoup(body, 'html.parser')
     cards = soup.findAll("div", {"class": "card"})
     #texts = soup.findAll(text=True)
-    visible_texts = filter(tag_visible, cards)  
+    visible_texts = filter(vis_tag, cards)  
     return u" ".join(t.strip() for t in visible_texts)
 
 
@@ -33,10 +38,13 @@ def SafeQuestions(listOfFlags,Questions):
             return False
     return True #No flag word found
 
-
+# followed tutorial to find this.  
+# This was a hurdle because it seems some webpages will and wont be accessed with beautiful soup
 class AppURLopener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0"
 
+#This is used to make a person object for each person the fastpeoplesearch returned
+#since we have to investigate all possibilities we found this the easiest way to keep everything straight
 class Person:
     def __init__(self, name,age,link,family,aliases,addresses, mothersMaidenNames):
         self.name = name
@@ -63,16 +71,21 @@ class Person:
 
 
 
-
+#formats the url to include input from the user
 def formatURL(url):
     base = 'https://www.fastpeoplesearch.com'
     base += url
     return base
 
+#get high level details on each person returned
 def highLevelDetails(url):
+    #initialize new opener
     opener = AppURLopener()
+    #read contents returned
     html = opener.open(url).read()
+    #get the soup
     soup = BeautifulSoup(html, 'html.parser')
+    #grab the more in depth details link
     links = soup.findAll("a", {"class": "btn btn-primary link-to-details"}, href=True)
     #print("LINKS---> ", links)
     h3s = soup.findAll("h3")
@@ -149,6 +162,7 @@ def highLevelDetails(url):
         listOfAddresses.append(address.contents)
 
     i = 0
+    #build list of family members
     for person in listOfNames:
         ##print("**********BEGGINING OF PERSON***********")
         ##print(person, listOfAges[i], listOfLinks[i], listOfAddresses[i])
@@ -176,10 +190,13 @@ def highLevelDetails(url):
         i +=1
     return listOfLinks, listOfNames, listOfAges
 
-
+# the last function checked high level but returned a link to drill into each person found
 def checkFurtherDetails(url):
+    #initialize opener
     opener = AppURLopener()
+    #open the link to the person
     html = opener.open(url).read()
+    #get the soup
     soup = BeautifulSoup(html, 'html.parser')
     relatives_table = soup.findAll("div", {"id": "relative-links"})
     print(len(relatives_table))
@@ -253,6 +270,7 @@ def publicInformation(first, last, zipcode):
     #zipcode = "74012"
 
     url = "https://www.fastpeoplesearch.com/name/" + first.lower() + "-" + last.lower() + "_" + zipcode
+    print(url)
     links, names, ages = highLevelDetails(url)
     print(links)
     print(names)

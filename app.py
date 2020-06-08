@@ -2,30 +2,37 @@ from flask import Flask, request, render_template
 import newbs4
 import publicInfoSearch
 import itertools 
-
+import os
 app = Flask(__name__)
 
+#Url entry page
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         url = request.form['url']
         ruling = newbs4.checkURL(url)
         if ruling:
-            return render_template('SSQ Checker/index.html', ruling = ruling)
+            return render_template('SSQ Checker/resultsUnsafe.html', ruling = ruling)
             #return render_template('index.html', ruling = "SAFE")
         else:
-            return render_template('SSQ Checker/index.html', ruling = "NO UNSAFE QUESTIONS FOUND")
+            return render_template('SSQ Checker/resultsSafe.html', ruling = "NO UNSAFE QUESTIONS FOUND")
 
-            #return render_template('index.html', ruling = "NOT SAFE")
+            #return render_template('results.html', ruling = "NOT SAFE")
         
     else:
         #return render_template('SSQ Checker/index.html')#, ruling = "SAFE")
-        return render_template('SSQ Checker/indexSearch.html')
+        return render_template('SSQ Checker/index.html')
         #return render_template('index.html')
 
 
-        
+# team page
+@app.route('/team', methods=['GET', 'POST'])
+def team():
+    return render_template('SSQ Checker/team.html')
+    #return render_template('index.html')
 
+        
+# Page for the demonstration of a full public search
 @app.route('/Full-Public-Info-Search', methods=['GET', 'POST'])
 def fullSearch():
     if request.method =='POST':
@@ -76,7 +83,7 @@ def fullSearch():
     else:
         return render_template('SSQ Checker/FullSearchDemo.html')
 
-
+#Mother's maiden name demo
 @app.route('/Mothers-Maiden-Name-Demo', methods=['GET', 'POST'])
 def MaidenNameDemo():
     if request.method == 'POST':
@@ -108,6 +115,7 @@ def MaidenNameDemo():
 
         #return render_template('index.html')
 
+#Secure answer builder demo
 @app.route('/Secure-Answers', methods=['GET', 'POST'])
 def secureAnswers():
     if request.method == 'POST':
@@ -138,9 +146,26 @@ def secureAnswers():
                             listOfRecommendations.append(component4)
         perm = itertools.permutations(listOfRecommendations) 
         betterFormattedList = []
-        for i in list(perm): 
-            betterFormattedList.append(i[0]+"--"+i[1]+"--"+i[2])
-        print(betterFormattedList)
+        if numComponents == 1:
+            for i in list(perm): 
+                betterFormattedList.append(i[0])
+            print(betterFormattedList)
+        if numComponents == 2:
+            for i in list(perm): 
+                betterFormattedList.append(i[0]+"--"+i[1])
+            print(betterFormattedList)        
+        if numComponents == 3:
+            for i in list(perm): 
+                betterFormattedList.append(i[0]+"--"+i[1]+"--"+i[2])
+            print(betterFormattedList)
+        if numComponents == 4:
+            for i in list(perm): 
+                betterFormattedList.append(i[0]+"--"+i[1]+"--"+i[2]+"--"+i[3])
+            print(betterFormattedList)
+        if numComponents == 5:
+            for i in list(perm): 
+                betterFormattedList.append(i[0]+"--"+i[1]+"--"+i[2]+"--"+i[3]+"--"+i[4])
+            print(betterFormattedList)
         return render_template('SSQ Checker/SecureInput.html', betterFormattedList = betterFormattedList)
 
         
@@ -149,6 +174,7 @@ def secureAnswers():
 
         #return render_template('index.html')
 
+#runs the app
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(port = os.environ["PORT"])

@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
-  <link rel="icon">
-  <title>The SQS Checker | Home</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+  <title>The SQS Checker | Secure Answer Generator</title>
   <meta name="description" content="The SSQ Checker for Computer Security">
   <meta name="keywords" content="Comp Securtiy, etc.">
   <meta name="author" content="Pingendo">
@@ -4096,7 +4096,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4116,7 +4116,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4133,7 +4133,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4162,7 +4162,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -6556,7 +6556,7 @@ html, body {
                     <a class="nav-link " href="/"><b>Home</b></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"><b>The Team</b></a>
+                    <a class="nav-link" href="/team"><b>The Team</b></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/Mothers-Maiden-Name-Demo"><b>Demo Mother's Maiden Name</b></a>
@@ -6589,20 +6589,52 @@ html, body {
                   </div>
                 </div>
                 <p class="lead">If you have no other option but to answer a weak question then the best thing you can do is to add components to your answer.
-                    Take for example a list of 4 potential maiden names.  An attacker would need at most four guesses to crack the question. 
+                    Take for example a list of 4 potential maiden names.  An attacker would need at most four guesses to crack the question.
                     Consider adding a component or two to your answer.  The important thing is to keep the component memorable so if you are trying to provide an answer to "mother's maiden name"
                     you could give her birth date in front.  By adding the month and date to the maiden name you have made an answer with three components and which has a complexity of 3!.
                     This would widen the range of possibilities from the original 4 options to 6 for each of the original 4 (for a total of 24), and thats assuming they know about this format.
                 </p>
                 {% if betterFormattedList %}
-                {% for item in betterFormattedList %}
-                  <p class="col-md-3" style= "background-color:white; color:red" > {{ item }}</p>
-                {% endfor %}
-                {% endif %}
+
+                <center>
+                  <div class="col">
+                    <div class="col-md-5 text-dark bg-info">
+                      <div class="table-responsive">
+                        <table class="table table-bordered ">
+                          <thead class="thead-dark">
+                           <tr>
+                              <th>Permutations of Answers</th>
+                
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th>
+                                {% for item in betterFormattedList %} 
+                                {% autoescape false %}
+                                {{ item }}                 
+                                {% endautoescape %}
+                
+                            </tr>
+                            <tr>
+                              <th>{% endfor %}</th>
+                            </tr>
+                          </tbody>
+                        </table>
+      
+                      </div>
+    
+                    </div>
+    
+    
+                  </div></center>
+                  {% endif %}
+
+
               </div>
               <div class="col-md-4 pb-5" style=""><img class="d-block align-items-center w-100 d-flex flex-grow-0 justify-content-start img-fluid mx-auto pt-1 pb-4" src="static/SSQCheckerLogo.png"></div>
             </div>
-            <div class="col-md-6 pb-5" style="">
+            <center><div class="col-md-6 pb-5" style="">
               <div class="input-group input-group-lg mb-3 col-md-10">
                 <div class="input-group-prepend">
                   <span class="input-group-text" style="color:black" >Component 1</span>
@@ -6634,21 +6666,13 @@ html, body {
                 <input type="text" name="component4" class="form-control shadow-sm form-control-lg" placeholder="Enter zipcode name"  >
               </div>
 
-
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="row">
           <!--<input type="submit" value="Submit">-->
           <div class="col-md-12"><button type="submit" class="btn btn-lg btn-success shadow-sm">Run Checker</button></div>
-
         <!--<div class="col-md-12"><div class="btn btn-lg btn-success shadow-sm" style=""><b class="" style="" >Run Checker</b></div></div>-->
       </div>
-    </div>
 
-  </form><br><br>
-
+  </form>
     <div class="container mt-auto">
       <div class="row">
         <div class="col-md-12">
