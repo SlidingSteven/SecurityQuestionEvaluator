@@ -3,9 +3,11 @@ import newbs4
 import publicInfoSearch
 import itertools 
 import os
+from collections import OrderedDict
 from pprint import pprint
 import json
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False
 
 #Url entry page
 @app.route('/', methods=['GET', 'POST'])
@@ -26,29 +28,7 @@ def index():
 def team():
     return render_template('SSQ Checker/team.html')
 
-books = [
-    {'id': 0,
-     'title': 'A Fire Upon the Deep',
-     'author': 'Vernor Vinge',
-     'first_sentence': 'The coldsleep itself was dreamless.',
-     'year_published': '1992'},
-    {'id': 1,
-     'title': 'The Ones Who Walk Away From Omelas',
-     'author': 'Ursula K. Le Guin',
-     'first_sentence': 'With a clamor of bells that set the swallows soaring, the Festival of Summer came to the city Omelas, bright-towered by the sea.',
-     'published': '1973'},
-    {'id': 2,
-     'title': 'Dhalgren',
-     'author': 'Samuel R. Delany',
-     'first_sentence': 'to wound the autumnal city.',
-     'published': '1975'}
-]
-# A route to return all of the available entries in our catalog.
-@app.route('/api/v1/public-info-search', methods=['GET'])
-def api_all():
 
-
-    return jsonify(books)
 
 
 
@@ -112,7 +92,7 @@ def fullSearch():
                     "age": PeopleFound[i].get_age(),
                     "addresses": PeopleFound[i].get_addresses()
                 }
-                data_list.append(json.dumps(curr_person))
+                data_list.append(curr_person)
                 i+=1
             return jsonify(data_list)
         return render_template('SSQ Checker/FullSearchDemo.html')
