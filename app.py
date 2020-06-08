@@ -1,8 +1,10 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import newbs4
 import publicInfoSearch
 import itertools 
 import os
+from pprint import pprint
+import json
 app = Flask(__name__)
 
 #Url entry page
@@ -13,25 +15,41 @@ def index():
         ruling = newbs4.checkURL(url)
         if ruling:
             return render_template('SSQ Checker/resultsUnsafe.html', ruling = ruling)
-            #return render_template('index.html', ruling = "SAFE")
         else:
-            return render_template('SSQ Checker/resultsSafe.html', ruling = "NO UNSAFE QUESTIONS FOUND")
-
-            #return render_template('results.html', ruling = "NOT SAFE")
-        
+            return render_template('SSQ Checker/resultsSafe.html', ruling = "NO UNSAFE QUESTIONS FOUND")        
     else:
-        #return render_template('SSQ Checker/index.html')#, ruling = "SAFE")
         return render_template('SSQ Checker/index.html')
-        #return render_template('index.html')
 
 
 # team page
 @app.route('/team', methods=['GET', 'POST'])
 def team():
     return render_template('SSQ Checker/team.html')
-    #return render_template('index.html')
 
-        
+books = [
+    {'id': 0,
+     'title': 'A Fire Upon the Deep',
+     'author': 'Vernor Vinge',
+     'first_sentence': 'The coldsleep itself was dreamless.',
+     'year_published': '1992'},
+    {'id': 1,
+     'title': 'The Ones Who Walk Away From Omelas',
+     'author': 'Ursula K. Le Guin',
+     'first_sentence': 'With a clamor of bells that set the swallows soaring, the Festival of Summer came to the city Omelas, bright-towered by the sea.',
+     'published': '1973'},
+    {'id': 2,
+     'title': 'Dhalgren',
+     'author': 'Samuel R. Delany',
+     'first_sentence': 'to wound the autumnal city.',
+     'published': '1975'}
+]
+# A route to return all of the available entries in our catalog.
+@app.route('/api/v1/public-info-search', methods=['GET'])
+def api_all():
+
+
+    return jsonify(books)
+
 # Page for the demonstration of a full public search
 @app.route('/Full-Public-Info-Search', methods=['GET', 'POST'])
 def fullSearch():
@@ -43,6 +61,8 @@ def fullSearch():
             PeopleFound = publicInfoSearch.publicInformation(first_name, last_name, zipcode)
             i=0
             newList = []
+            data_list = []
+            json_obj = {}
             for person in PeopleFound:
                 newString = ""
                 newString += PeopleFound[i].get_name() + "<br/>"
@@ -60,27 +80,25 @@ def fullSearch():
                     fam = family + "<br/>"
                     newString += fam
                 newList.append(newString)
+                curr_person = {
+                    "name": PeopleFound[i].get_name(),
+                    "age": PeopleFound[i].get_age(),
+                    "addresses": PeopleFound[i].get_addresses()
+                }
+                data_list.append(json.dumps(curr_person))
                 i+=1
-            print(newList)
-            #maidenNames = []
-            #for person in PeopleFound:
-             ##   tempNames = person.get_Mothers_Maiden_Name()
-             #   for tempName in tempNames:
-              #      if tempName not in maidenNames:
-               #         maidenNames.append(tempName)
-            #print("FROM APP- ", maidenNames)
-            #exit()
+            for el in data_list:
+                print(el)
+            #pprint(data_list)
             if PeopleFound:
-                print('render this')
                 return render_template('SSQ Checker/FullSearchDemo.html', PeopleFound = newList)
-                #return render_template('index.html', ruling = "SAFE")
             else:
-                print('render that')
                 return render_template('SSQ Checker/FullSearchDemo.html', PeopleFound = "No Potential Information Found", flag = True)
         except ValueError:
-            print('render error')
             return render_template('SSQ Checker/FullSearchDemo.html', Error = "No Potential Information Found")
     else:
+        if 'first_name' in request.args and 'last_name' in request.args and 'zipcode' in request.args:
+            return "API STUFF"
         return render_template('SSQ Checker/FullSearchDemo.html')
 
 #Mother's maiden name demo
@@ -98,22 +116,14 @@ def MaidenNameDemo():
                 for tempName in tempNames:
                     if tempName not in maidenNames:
                         maidenNames.append(tempName)
-            #print("FROM APP- ", maidenNames)
-            #exit()
             if PeopleFound:
                 return render_template('SSQ Checker/MaidenDemoSearch.html', listOfPeople = maidenNames)
-                #return render_template('index.html', ruling = "SAFE")
             else:
                 return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = "No Potential Maiden Names Found", flag = True)
         except ValueError:
             return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = "No Potential Maiden Names Found")
-
-            #return render_template('index.html', ruling = "NOT SAFE")
-        
     else:
         return render_template('SSQ Checker/MaidenDemoSearch.html')#, ruling = "SAFE")
-
-        #return render_template('index.html')
 
 #Secure answer builder demo
 @app.route('/Secure-Answers', methods=['GET', 'POST'])
@@ -172,9 +182,8 @@ def secureAnswers():
     else:
         return render_template('SSQ Checker/SecureInput.html')#, ruling = "SAFE")
 
-        #return render_template('index.html')
 
 #runs the app
 if __name__ == '__main__':
     app.debug = True
-    app.run(port = os.environ["PORT"])
+    app.run()#port = os.environ["PORT"])
