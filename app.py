@@ -99,7 +99,11 @@ def fullSearch():
                     i+=1
                 return jsonify(data_list)
             except:
-                return "Error: A field is missing.  See below for formatting-\nhttps://sqs-checker.herokuapp.com/Full-Public-Info-Search?first_name=Bobby&last_name=Sue&zipcode=12345"
+                return """Error: A field is missing or no data was returned.  
+                See below for formatting-\n
+                https://sqs-checker.herokuapp.com/Full-Public-Info-Search?first_name=Bobby&last_name=Sue&zipcode=12345
+                
+                If you think you have it properly formatted you can try searching your name on fastpeoplesearch.com which is where I scrape from."""
         return render_template('SSQ Checker/FullSearchDemo.html')
 
 #Mother's maiden name demo
