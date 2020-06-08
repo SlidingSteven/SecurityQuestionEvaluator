@@ -50,6 +50,8 @@ def api_all():
 
     return jsonify(books)
 
+
+
 # Page for the demonstration of a full public search
 @app.route('/Full-Public-Info-Search', methods=['GET', 'POST'])
 def fullSearch():
@@ -98,7 +100,21 @@ def fullSearch():
             return render_template('SSQ Checker/FullSearchDemo.html', Error = "No Potential Information Found")
     else:
         if 'first_name' in request.args and 'last_name' in request.args and 'zipcode' in request.args:
-            return "API STUFF"
+            first_name = request.args['first_name']
+            last_name = request.args['last_name']
+            zipcode = request.args['zipcode']
+            PeopleFound = publicInfoSearch.publicInformation(first_name, last_name, zipcode)
+            i=0
+            data_list = []
+            for person in PeopleFound:
+                curr_person = {
+                    "name": PeopleFound[i].get_name(),
+                    "age": PeopleFound[i].get_age(),
+                    "addresses": PeopleFound[i].get_addresses()
+                }
+                data_list.append(json.dumps(curr_person))
+                i+=1
+            return jsonify(data_list)
         return render_template('SSQ Checker/FullSearchDemo.html')
 
 #Mother's maiden name demo
