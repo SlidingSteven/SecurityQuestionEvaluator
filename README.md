@@ -12,6 +12,8 @@ You can visit our site here- https://sqs-checker.herokuapp.com/
 
 Or view an API of the public info demo here- https://sqs-checker.herokuapp.com/Full-Public-Info-Search?first_name=&last_name=&zipcode=
 
+Example of the formatting- https://sqs-checker.herokuapp.com/Full-Public-Info-Search?first_name=Bobby&last_name=Sue&zipcode=12345
+
 ## CHECKPOINTS 
 1. [x] Research Paper 
 2. [x] Lightning Talk
