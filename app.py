@@ -90,7 +90,9 @@ def fullSearch():
                 curr_person = {
                     "name": PeopleFound[i].get_name(),
                     "age": PeopleFound[i].get_age(),
-                    "addresses": PeopleFound[i].get_addresses()
+                    "addresses": PeopleFound[i].get_addresses(),
+                    "aliases": PeopleFound[i].get_aliases(),
+                    "family": PeopleFound[i].get_family()
                 }
                 data_list.append(curr_person)
                 i+=1
