@@ -172,7 +172,7 @@ def Diagnose():
         except ValueError as a:
             try: 
                 PeopleFound = publicInfoSearch.publicInformation(first_name, last_name, zipcode)    
-                if PeopleFound is "FAILED TO OPEN HTML":
+                if PeopleFound in "FAILED TO OPEN HTML":
                     return "FAILED TO OPEN HTML"
                 return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = len(PeopleFound))
             except:
