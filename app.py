@@ -146,8 +146,8 @@ def MaidenNameDemo():
                 return render_template('SSQ Checker/MaidenDemoSearch.html', listOfPeople = maidenNames)
             else:
                 return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = "No Potential Maiden Names Found", flag = True)
-        except ValueError:
-            return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = "ValueError: No Potential Maiden Names Found")
+        except ValueError as a:
+            return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = "ValueError: No Potential Maiden Names Found--- " + a)
     else:
         return render_template('SSQ Checker/MaidenDemoSearch.html')#, ruling = "SAFE")
 
