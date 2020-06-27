@@ -151,6 +151,34 @@ def MaidenNameDemo():
     else:
         return render_template('SSQ Checker/MaidenDemoSearch.html')#, ruling = "SAFE")
 
+@app.route('/Diagnose', methods=['GET', 'POST'])
+def Diagnose():
+    if request.method == 'POST':
+        first_name = request.form['first']
+        last_name = request.form['last']
+        zipcode = request.form['zipcode']
+        try: 
+            PeopleFound = publicInfoSearch.publicInformation(first_name, last_name, zipcode)    
+            maidenNames = []
+            for person in PeopleFound:
+                tempNames = person.get_Mothers_Maiden_Name()
+                for tempName in tempNames:
+                    if tempName not in maidenNames:
+                        maidenNames.append(tempName)
+            if PeopleFound:
+                return render_template('SSQ Checker/MaidenDemoSearch.html', listOfPeople = maidenNames)
+            else:
+                return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = "No Potential Maiden Names Found", flag = True)
+        except ValueError as a:
+            try: 
+                PeopleFound = publicInfoSearch.publicInformation(first_name, last_name, zipcode)    
+                return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = len(PeopleFound))
+            except:
+                return "No people"
+            #return render_template('SSQ Checker/MaidenNameDemo.html', listOfPeople = "ValueError: No Potential Maiden Names Found--- " + str(a))
+    else:
+        return render_template('SSQ Checker/MaidenDemoSearch.html')#, ruling = "SAFE")
+
 #Secure answer builder demo
 @app.route('/Secure-Answers', methods=['GET', 'POST'])
 def secureAnswers():
