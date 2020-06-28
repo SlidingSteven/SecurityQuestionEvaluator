@@ -82,10 +82,7 @@ def highLevelDetails(url):
     #initialize new opener
     opener = AppURLopener()
     #read contents returned
-    try: 
-        html = opener.open(url).read()
-    except:
-        return ["FAILED TO OPEN HTML", "FAILED TO OPEN HTML", "FAILED TO OPEN HTML"]
+    html = opener.open(url).read()
     #get the soup
     soup = BeautifulSoup(html, 'html.parser')
     #grab the more in depth details link
@@ -201,8 +198,7 @@ def publicInformation(first, last, zipcode):
     
     # fill out the high level details
     links, names, ages = highLevelDetails(url)
-    if links in "FAILED TO OPEN HTML":
-        return "FAILED TO OPEN HTML"
+    
     # compile a list of people 
     peopleFound = []
     i =0
