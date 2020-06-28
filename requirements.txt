@@ -7,7 +7,7 @@ cheroot==8.3.0
 CherryPy==3.8.2
 click==7.1.1
 contextlib2==0.6.0.post1
-cryptography==2.1.4
+cryptography==2.3
 cycler==0.10.0
 docopt==0.6.2
 enum34==1.1.6
