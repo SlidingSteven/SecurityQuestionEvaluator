@@ -2,10 +2,10 @@
 
 ## Introduction
 This application was built to demonstrate how security questions on personal accounts pose a [serious weakness](https://www.wired.com/2016/09/time-kill-security-questions-answer-lies/) to the actual security of the account.  This app tackles the problem from a few angles -
-1. If you are in the account creation process, you can go to the [Home Page](https://sqs-checker.herokuapp.com/) and enter the URL.  This app will then scrape all questions from the page and will check if the questions contain key words we found in many "weak" questions. 
-2. If you want a demo of what public information is available on you, navigate to the [Public Info Demo](https://sqs-checker.herokuapp.com/Full-Public-Info-Search) and enter your name and zipcode.  The app will then pass that info to [FastPeopleSearch.com](fastpeoplesearch.com) and scrape the public info from the page using beautiful soup. 
-3. Another demo we have is to show the weakness of the common security question- ["What is your mother's maiden name?"](https://sqs-checker.herokuapp.com/Mothers-Maiden-Name-Demo)  For this we perform the same search and scrape technique as we did in the public info search, but this time we look a little deeper and pull the family list of the person entered and return each unique last name of all of the family memnbers.  
-4. If you are in need of a [secure answer](https://sqs-checker.herokuapp.com/Secure-Answers) and don't know what to do, you can use our app to give one idea.  On this page we take in a few answer components and return each permutation of that combination.  It is not the most ideal solution but for some questions it is better than giving the most accurate answer.
+1. If you are in the account creation process, you can go to the [Home Page](https://sqschecker1.wn.r.appspot.com/) and enter the URL.  This app will then scrape all questions from the page and will check if the questions contain key words we found in many "weak" questions. 
+2. If you want a demo of what public information is available on you, navigate to the [Public Info Demo](https://sqschecker1.wn.r.appspot.com/Full-Public-Info-Search) and enter your name and zipcode.  The app will then pass that info to [FastPeopleSearch.com](fastpeoplesearch.com) and scrape the public info from the page using beautiful soup. 
+3. Another demo we have is to show the weakness of the common security question- ["What is your mother's maiden name?"](https://sqschecker1.wn.r.appspot.com/Mothers-Maiden-Name-Demo)  For this we perform the same search and scrape technique as we did in the public info search, but this time we look a little deeper and pull the family list of the person entered and return each unique last name of all of the family memnbers.  
+4. If you are in need of a [secure answer](https://sqschecker1.wn.r.appspot.com/Secure-Answers) and don't know what to do, you can use our app to give one idea.  On this page we take in a few answer components and return each permutation of that combination.  It is not the most ideal solution but for some questions it is better than giving the most accurate answer.
 
 This is not meant to be a complete solution but it should give users a good idea of what is out there and one potential fix for how to avoid issues with weak account questions.
 
@@ -16,11 +16,11 @@ This is not meant to be a complete solution but it should give users a good idea
 * Provide insight to users on how much information can be divulged from a small source of public information.
 
 ## Link
-You can visit our site here- https://sqs-checker.herokuapp.com/ 
+You can visit our site here- https://sqschecker1.wn.r.appspot.com/ 
 
-Or view an API of the public info demo here- https://sqs-checker.herokuapp.com/Full-Public-Info-Search?first_name=&last_name=&zipcode= 
+Or view an API of the public info demo here- https://sqschecker1.wn.r.appspot.com/Full-Public-Info-Search?first_name=&last_name=&zipcode= 
 
-Example of the formatting- https://sqs-checker.herokuapp.com/Full-Public-Info-Search?first_name=Bobby&last_name=Sue&zipcode=12345 
+Example of the formatting- https://sqschecker1.wn.r.appspot.com/Full-Public-Info-Search?first_name=Bobby&last_name=Sue&zipcode=12345 
 
 ## CHECKPOINTS 
 1. [x] Research Paper 
