@@ -18,7 +18,7 @@ idna==2.9
 ipaddress==1.0.17
 itsdangerous==1.1.0
 jaraco.functools==2.0
-Jinja2==2.11.1
+Jinja2==2.11.3
 keyring==10.6.0
 keyrings.alt==3.0
 kiwisolver==1.1.0
