@@ -46,6 +46,6 @@ spotipy==2.11.1
 soupsieve==1.9.5
 subprocess32==3.5.4
 tempora==1.14.1
-urllib3==1.25.8
+urllib3==1.26.5
 Werkzeug==1.0.1
 zc.lockfile==2.0
