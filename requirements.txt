@@ -42,7 +42,7 @@ requests==2.23.0
 requests-oauthlib==1.0.0
 SecretStorage==2.3.1
 six==1.14.0
-spotipy==2.11.1
+spotipy==2.22.1
 soupsieve==1.9.5
 subprocess32==3.5.4
 tempora==1.14.1
